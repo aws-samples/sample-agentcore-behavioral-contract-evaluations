@@ -1,0 +1,1399 @@
+{
+  "schemaVersion": "1.0",
+  "evaluationLevel": "TRACE",
+  "evaluationInput": {
+    "sessionSpans": [
+      {
+        "name": "chat global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+        "kind": "CLIENT",
+        "source": "adot_cw",
+        "trace_id": "6a5a661943faf4e62a73e0a96cdf0815",
+        "span_id": "b528e47e842a5ea0",
+        "parent_span_id": "eaba249b8f2e0f9f",
+        "scope": {
+          "name": "opentelemetry.instrumentation.botocore.bedrock-runtime",
+          "version": "0.63b1"
+        },
+        "start_time": "2026-07-17 17:28:00.675089+00:00",
+        "end_time": "2026-07-17 17:28:03.858418+00:00",
+        "duration_ms": 3183.328348,
+        "session_id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+        "attributes": {
+          "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+          "rpc.service": "Bedrock Runtime",
+          "aws.remote.resource.identifier": "global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "aws.remote.operation": "ConverseStream",
+          "gen_ai.provider.name": "aws.bedrock",
+          "server.address": "bedrock-runtime.us-west-2.amazonaws.com",
+          "aws.request_id": "648fa6c9-601a-4d92-99c3-a5322cbc707a",
+          "aws.local.operation": "UnmappedOperation",
+          "aws.span.kind": "CLIENT",
+          "aws.auth.region": "us-west-2",
+          "rpc.method": "ConverseStream",
+          "gen_ai.response.finish_reasons": [
+            "tool_use"
+          ],
+          "server.port": 443,
+          "gen_ai.request.model": "global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+          "http.response.status_code": 200,
+          "gen_ai.system": "aws.bedrock",
+          "telemetry.extended": "true",
+          "gen_ai.usage.output_tokens": 149,
+          "aws.genai.span_kind": "LLM",
+          "rpc.system": "aws-api",
+          "aws.remote.service": "AWS::BedrockRuntime",
+          "http.status_code": 200,
+          "aws.region": "us-west-2",
+          "aws.remote.resource.type": "AWS::Bedrock::Model",
+          "gen_ai.operation.name": "chat",
+          "gen_ai.usage.input_tokens": 1043,
+          "aws.genai.token_count_total": 1192,
+          "retry_attempts": 0,
+          "PlatformType": "AWS::BedrockAgentCore",
+          "aws.auth.account.access_key": "REDACTED",
+          "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84"
+        },
+        "events": [],
+        "span_events": [],
+        "status": {
+          "code": "UNSET"
+        },
+        "traceId": "6a5a661943faf4e62a73e0a96cdf0815",
+        "endTimeUnixNano": 1784309283858417400,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_claims_agent-6fkZyvCVOE/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_claims_agent-6fkZyvCVOE-DEFAULT",
+            "telemetry.sdk.version": "1.42.1",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.18.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 3183328348,
+        "startTimeUnixNano": 1784309280675089200,
+        "parentSpanId": "eaba249b8f2e0f9f",
+        "spanId": "b528e47e842a5ea0"
+      },
+      {
+        "name": "chat",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a5a661943faf4e62a73e0a96cdf0815",
+        "span_id": "eaba249b8f2e0f9f",
+        "parent_span_id": "1eb0ab543e9198b9",
+        "scope": {
+          "name": "strands.telemetry.tracer",
+          "version": ""
+        },
+        "start_time": "2026-07-17 17:28:00.656710+00:00",
+        "end_time": "2026-07-17 17:28:03.859111+00:00",
+        "duration_ms": 3202.401521,
+        "session_id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+        "attributes": {
+          "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+          "gen_ai.usage.prompt_tokens": 1043,
+          "gen_ai.usage.output_tokens": 149,
+          "gen_ai.server.request.duration": 3161,
+          "gen_ai.usage.total_tokens": 1192,
+          "gen_ai.usage.completion_tokens": 149,
+          "aws.genai.span_kind": "LLM",
+          "gen_ai.event.start_time": "2026-07-17T17:28:00.656729+00:00",
+          "gen_ai.server.time_to_first_token": 2025,
+          "aws.local.environment": "bedrock-agentcore:default",
+          "gen_ai.provider.name": "strands-agents",
+          "gen_ai.operation.name": "chat",
+          "gen_ai.event.end_time": "2026-07-17T17:28:03.859067+00:00",
+          "gen_ai.usage.input_tokens": 1043,
+          "aws.genai.token_count_total": 1192,
+          "gen_ai.request.model": "global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+          "gen_ai.system": "strands-agents"
+        },
+        "events": [],
+        "span_events": [
+          {
+            "event_name": "strands.telemetry.tracer",
+            "span_id": "eaba249b8f2e0f9f",
+            "body": {
+              "output": {
+                "messages": [
+                  {
+                    "content": {
+                      "message": "[{\"text\": \"I'll process this pharmacy claim for member MEM-001 for lisinopril. Let me follow the required steps.\"}, {\"toolUse\": {\"toolUseId\": \"tooluse_wN9MkwaOmEBiBYwQ1XiSvK\", \"name\": \"lookup_formulary\", \"input\": {\"drug_name\": \"lisinopril\"}}}, {\"toolUse\": {\"toolUseId\": \"tooluse_fWNzm5a52Dn2aMs0oGtbLJ\", \"name\": \"check_coverage\", \"input\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\"}}}]",
+                      "finish_reason": "tool_use"
+                    },
+                    "role": "assistant"
+                  }
+                ]
+              },
+              "input": {
+                "messages": [
+                  {
+                    "content": {
+                      "content": "[{\"text\": \"You are a claims processing agent for a health insurance company.\\n\\nFor each pharmacy claim, you MUST follow this exact process:\\n1. Look up the drug in the formulary database using the lookup_formulary tool\\n2. Check the member's coverage using the check_coverage tool\\n3. Render your decision using the render_decision tool, passing the policy\\n   section returned by the formulary lookup\\n\\nRules:\\n- Always cite the policy section from the formulary lookup in your final answer\\n- If the drug requires prior authorization, note this in your decision\\n- If the member's coverage is not active, deny the claim\\n- Never approve a claim based on your general knowledge alone \u2014 always use the tools\\n\"}]"
+                    },
+                    "role": "system"
+                  },
+                  {
+                    "content": {
+                      "content": "[{\"text\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\"}]"
+                    },
+                    "role": "user"
+                  }
+                ]
+              }
+            },
+            "time_unix_nano": 1784309283859111400,
+            "observed_time_unix_nano": 1784309287885393200,
+            "severity_number": 9,
+            "severity_text": "",
+            "attributes": {
+              "event.name": "strands.telemetry.tracer",
+              "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84"
+            }
+          }
+        ],
+        "status": {
+          "code": "OK"
+        },
+        "traceId": "6a5a661943faf4e62a73e0a96cdf0815",
+        "endTimeUnixNano": 1784309283859111400,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_claims_agent-6fkZyvCVOE/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_claims_agent-6fkZyvCVOE-DEFAULT",
+            "telemetry.sdk.version": "1.42.1",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.18.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 3202401521,
+        "startTimeUnixNano": 1784309280656710000,
+        "parentSpanId": "1eb0ab543e9198b9",
+        "spanId": "eaba249b8f2e0f9f"
+      },
+      {
+        "name": "execute_tool lookup_formulary",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a5a661943faf4e62a73e0a96cdf0815",
+        "span_id": "e00a9e078c0d7067",
+        "parent_span_id": "1eb0ab543e9198b9",
+        "scope": {
+          "name": "strands.telemetry.tracer",
+          "version": ""
+        },
+        "start_time": "2026-07-17 17:28:03.859887+00:00",
+        "end_time": "2026-07-17 17:28:03.862552+00:00",
+        "duration_ms": 2.664623,
+        "session_id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+        "attributes": {
+          "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+          "gen_ai.tool.status": "success",
+          "gen_ai.tool.call.id": "tooluse_wN9MkwaOmEBiBYwQ1XiSvK",
+          "gen_ai.tool.description": "Look up a drug in the formulary database.\n\nReturns coverage status, tier, prior auth requirements, and policy section.",
+          "gen_ai.tool.json_schema": "{\"properties\": {\"drug_name\": {\"description\": \"Parameter drug_name\", \"type\": \"string\"}}, \"required\": [\"drug_name\"], \"type\": \"object\"}",
+          "aws.genai.span_kind": "TOOL",
+          "gen_ai.event.start_time": "2026-07-17T17:28:03.859921+00:00",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "gen_ai.provider.name": "strands-agents",
+          "gen_ai.operation.name": "execute_tool",
+          "gen_ai.event.end_time": "2026-07-17T17:28:03.862526+00:00",
+          "gen_ai.tool.name": "lookup_formulary",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+          "gen_ai.system": "strands-agents"
+        },
+        "events": [],
+        "span_events": [
+          {
+            "event_name": "strands.telemetry.tracer",
+            "span_id": "e00a9e078c0d7067",
+            "body": {
+              "output": {
+                "messages": [
+                  {
+                    "content": {
+                      "message": "[{\"text\": \"{\\\"status\\\": \\\"covered\\\", \\\"tier\\\": 1, \\\"pa_required\\\": false, \\\"policy_section\\\": \\\"Section 4.2.1\\\", \\\"drug_class\\\": \\\"ACE Inhibitor\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"formulary-db\\\"}\"}]",
+                      "id": "tooluse_wN9MkwaOmEBiBYwQ1XiSvK"
+                    },
+                    "role": "assistant"
+                  }
+                ]
+              },
+              "input": {
+                "messages": [
+                  {
+                    "content": {
+                      "content": "{\"drug_name\": \"lisinopril\"}",
+                      "role": "tool",
+                      "id": "tooluse_wN9MkwaOmEBiBYwQ1XiSvK"
+                    },
+                    "role": "tool"
+                  }
+                ]
+              }
+            },
+            "time_unix_nano": 1784309283862551600,
+            "observed_time_unix_nano": 1784309287885584600,
+            "severity_number": 9,
+            "severity_text": "",
+            "attributes": {
+              "event.name": "strands.telemetry.tracer",
+              "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84"
+            }
+          }
+        ],
+        "status": {
+          "code": "OK"
+        },
+        "traceId": "6a5a661943faf4e62a73e0a96cdf0815",
+        "endTimeUnixNano": 1784309283862551600,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_claims_agent-6fkZyvCVOE/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_claims_agent-6fkZyvCVOE-DEFAULT",
+            "telemetry.sdk.version": "1.42.1",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.18.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 2664623,
+        "startTimeUnixNano": 1784309283859886800,
+        "parentSpanId": "1eb0ab543e9198b9",
+        "spanId": "e00a9e078c0d7067"
+      },
+      {
+        "name": "execute_tool check_coverage",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a5a661943faf4e62a73e0a96cdf0815",
+        "span_id": "123cffe332d38b05",
+        "parent_span_id": "1eb0ab543e9198b9",
+        "scope": {
+          "name": "strands.telemetry.tracer",
+          "version": ""
+        },
+        "start_time": "2026-07-17 17:28:03.860470+00:00",
+        "end_time": "2026-07-17 17:28:03.862779+00:00",
+        "duration_ms": 2.309178,
+        "session_id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+        "attributes": {
+          "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+          "gen_ai.tool.status": "success",
+          "gen_ai.tool.call.id": "tooluse_fWNzm5a52Dn2aMs0oGtbLJ",
+          "gen_ai.tool.description": "Check member coverage for a specific drug.\n\nReturns plan details, deductible status, copay, and any restrictions.",
+          "gen_ai.tool.json_schema": "{\"properties\": {\"member_id\": {\"description\": \"Parameter member_id\", \"type\": \"string\"}, \"drug_name\": {\"description\": \"Parameter drug_name\", \"type\": \"string\"}}, \"required\": [\"member_id\", \"drug_name\"], \"type\": \"object\"}",
+          "aws.genai.span_kind": "TOOL",
+          "gen_ai.event.start_time": "2026-07-17T17:28:03.860490+00:00",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "gen_ai.provider.name": "strands-agents",
+          "gen_ai.operation.name": "execute_tool",
+          "gen_ai.event.end_time": "2026-07-17T17:28:03.862763+00:00",
+          "gen_ai.tool.name": "check_coverage",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+          "gen_ai.system": "strands-agents"
+        },
+        "events": [],
+        "span_events": [
+          {
+            "event_name": "strands.telemetry.tracer",
+            "span_id": "123cffe332d38b05",
+            "body": {
+              "output": {
+                "messages": [
+                  {
+                    "content": {
+                      "message": "[{\"text\": \"{\\\"coverage_active\\\": true, \\\"plan_type\\\": \\\"PPO\\\", \\\"deductible_met\\\": true, \\\"copay_amount\\\": 10.0, \\\"restrictions\\\": [], \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"coverage-policy\\\"}\"}]",
+                      "id": "tooluse_fWNzm5a52Dn2aMs0oGtbLJ"
+                    },
+                    "role": "assistant"
+                  }
+                ]
+              },
+              "input": {
+                "messages": [
+                  {
+                    "content": {
+                      "content": "{\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\"}",
+                      "role": "tool",
+                      "id": "tooluse_fWNzm5a52Dn2aMs0oGtbLJ"
+                    },
+                    "role": "tool"
+                  }
+                ]
+              }
+            },
+            "time_unix_nano": 1784309283862779000,
+            "observed_time_unix_nano": 1784309287885718300,
+            "severity_number": 9,
+            "severity_text": "",
+            "attributes": {
+              "event.name": "strands.telemetry.tracer",
+              "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84"
+            }
+          }
+        ],
+        "status": {
+          "code": "OK"
+        },
+        "traceId": "6a5a661943faf4e62a73e0a96cdf0815",
+        "endTimeUnixNano": 1784309283862779000,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_claims_agent-6fkZyvCVOE/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_claims_agent-6fkZyvCVOE-DEFAULT",
+            "telemetry.sdk.version": "1.42.1",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.18.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 2309178,
+        "startTimeUnixNano": 1784309283860469800,
+        "parentSpanId": "1eb0ab543e9198b9",
+        "spanId": "123cffe332d38b05"
+      },
+      {
+        "name": "execute_event_loop_cycle",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a5a661943faf4e62a73e0a96cdf0815",
+        "span_id": "1eb0ab543e9198b9",
+        "parent_span_id": "ecbce76a2fac3bc3",
+        "scope": {
+          "name": "strands.telemetry.tracer",
+          "version": ""
+        },
+        "start_time": "2026-07-17 17:28:00.656281+00:00",
+        "end_time": "2026-07-17 17:28:03.863033+00:00",
+        "duration_ms": 3206.752003,
+        "session_id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+        "attributes": {
+          "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+          "gen_ai.operation.name": "execute_event_loop_cycle",
+          "gen_ai.event.end_time": "2026-07-17T17:28:03.863018+00:00",
+          "event_loop.cycle_id": "5f6c8c97-4f0e-4c06-ba67-6d095a429724",
+          "gen_ai.event.start_time": "2026-07-17T17:28:00.656303+00:00",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+          "gen_ai.system": "strands-agents",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "gen_ai.provider.name": "strands-agents"
+        },
+        "events": [],
+        "span_events": [
+          {
+            "event_name": "strands.telemetry.tracer",
+            "span_id": "1eb0ab543e9198b9",
+            "body": {
+              "output": {
+                "messages": [
+                  {
+                    "content": {
+                      "message": "[{\"text\": \"I'll process this pharmacy claim for member MEM-001 for lisinopril. Let me follow the required steps.\"}, {\"toolUse\": {\"toolUseId\": \"tooluse_wN9MkwaOmEBiBYwQ1XiSvK\", \"name\": \"lookup_formulary\", \"input\": {\"drug_name\": \"lisinopril\"}}}, {\"toolUse\": {\"toolUseId\": \"tooluse_fWNzm5a52Dn2aMs0oGtbLJ\", \"name\": \"check_coverage\", \"input\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\"}}}]",
+                      "tool.result": "[{\"toolResult\": {\"toolUseId\": \"tooluse_wN9MkwaOmEBiBYwQ1XiSvK\", \"status\": \"success\", \"content\": [{\"text\": \"{\\\"status\\\": \\\"covered\\\", \\\"tier\\\": 1, \\\"pa_required\\\": false, \\\"policy_section\\\": \\\"Section 4.2.1\\\", \\\"drug_class\\\": \\\"ACE Inhibitor\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"formulary-db\\\"}\"}]}}, {\"toolResult\": {\"toolUseId\": \"tooluse_fWNzm5a52Dn2aMs0oGtbLJ\", \"status\": \"success\", \"content\": [{\"text\": \"{\\\"coverage_active\\\": true, \\\"plan_type\\\": \\\"PPO\\\", \\\"deductible_met\\\": true, \\\"copay_amount\\\": 10.0, \\\"restrictions\\\": [], \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"coverage-policy\\\"}\"}]}}]"
+                    },
+                    "role": "assistant"
+                  },
+                  {
+                    "content": "[{\"toolResult\": {\"toolUseId\": \"tooluse_wN9MkwaOmEBiBYwQ1XiSvK\", \"status\": \"success\", \"content\": [{\"text\": \"{\\\"status\\\": \\\"covered\\\", \\\"tier\\\": 1, \\\"pa_required\\\": false, \\\"policy_section\\\": \\\"Section 4.2.1\\\", \\\"drug_class\\\": \\\"ACE Inhibitor\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"formulary-db\\\"}\"}]}}, {\"toolResult\": {\"toolUseId\": \"tooluse_fWNzm5a52Dn2aMs0oGtbLJ\", \"status\": \"success\", \"content\": [{\"text\": \"{\\\"coverage_active\\\": true, \\\"plan_type\\\": \\\"PPO\\\", \\\"deductible_met\\\": true, \\\"copay_amount\\\": 10.0, \\\"restrictions\\\": [], \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"coverage-policy\\\"}\"}]}}]",
+                    "role": "assistant"
+                  }
+                ]
+              },
+              "input": {
+                "messages": [
+                  {
+                    "content": {
+                      "content": "[{\"text\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\"}]"
+                    },
+                    "role": "user"
+                  }
+                ]
+              }
+            },
+            "time_unix_nano": 1784309283863032800,
+            "observed_time_unix_nano": 1784309287885831000,
+            "severity_number": 9,
+            "severity_text": "",
+            "attributes": {
+              "event.name": "strands.telemetry.tracer",
+              "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84"
+            }
+          }
+        ],
+        "status": {
+          "code": "OK"
+        },
+        "traceId": "6a5a661943faf4e62a73e0a96cdf0815",
+        "endTimeUnixNano": 1784309283863032800,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_claims_agent-6fkZyvCVOE/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_claims_agent-6fkZyvCVOE-DEFAULT",
+            "telemetry.sdk.version": "1.42.1",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.18.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 3206752003,
+        "startTimeUnixNano": 1784309280656280800,
+        "parentSpanId": "ecbce76a2fac3bc3",
+        "spanId": "1eb0ab543e9198b9"
+      },
+      {
+        "name": "chat global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+        "kind": "CLIENT",
+        "source": "adot_cw",
+        "trace_id": "6a5a661943faf4e62a73e0a96cdf0815",
+        "span_id": "ca5a3ca7942218e6",
+        "parent_span_id": "d708a3bf6ca30dc0",
+        "scope": {
+          "name": "opentelemetry.instrumentation.botocore.bedrock-runtime",
+          "version": "0.63b1"
+        },
+        "start_time": "2026-07-17 17:28:03.864406+00:00",
+        "end_time": "2026-07-17 17:28:07.967455+00:00",
+        "duration_ms": 4103.049413,
+        "session_id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+        "attributes": {
+          "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+          "rpc.service": "Bedrock Runtime",
+          "aws.remote.resource.identifier": "global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "aws.remote.operation": "ConverseStream",
+          "gen_ai.provider.name": "aws.bedrock",
+          "server.address": "bedrock-runtime.us-west-2.amazonaws.com",
+          "aws.request_id": "c1f186c3-a9d9-4113-9d77-c9fddca6b0c9",
+          "aws.local.operation": "UnmappedOperation",
+          "aws.span.kind": "CLIENT",
+          "aws.auth.region": "us-west-2",
+          "rpc.method": "ConverseStream",
+          "gen_ai.response.finish_reasons": [
+            "tool_use"
+          ],
+          "server.port": 443,
+          "gen_ai.request.model": "global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+          "http.response.status_code": 200,
+          "gen_ai.system": "aws.bedrock",
+          "telemetry.extended": "true",
+          "gen_ai.usage.output_tokens": 213,
+          "aws.genai.span_kind": "LLM",
+          "rpc.system": "aws-api",
+          "aws.remote.service": "AWS::BedrockRuntime",
+          "http.status_code": 200,
+          "aws.region": "us-west-2",
+          "aws.remote.resource.type": "AWS::Bedrock::Model",
+          "gen_ai.operation.name": "chat",
+          "gen_ai.usage.input_tokens": 1391,
+          "aws.genai.token_count_total": 1604,
+          "retry_attempts": 0,
+          "PlatformType": "AWS::BedrockAgentCore",
+          "aws.auth.account.access_key": "REDACTED",
+          "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84"
+        },
+        "events": [],
+        "span_events": [],
+        "status": {
+          "code": "UNSET"
+        },
+        "traceId": "6a5a661943faf4e62a73e0a96cdf0815",
+        "endTimeUnixNano": 1784309287967455500,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_claims_agent-6fkZyvCVOE/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_claims_agent-6fkZyvCVOE-DEFAULT",
+            "telemetry.sdk.version": "1.42.1",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.18.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 4103049413,
+        "startTimeUnixNano": 1784309283864406000,
+        "parentSpanId": "d708a3bf6ca30dc0",
+        "spanId": "ca5a3ca7942218e6"
+      },
+      {
+        "name": "chat",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a5a661943faf4e62a73e0a96cdf0815",
+        "span_id": "d708a3bf6ca30dc0",
+        "parent_span_id": "16b12df55ce242d6",
+        "scope": {
+          "name": "strands.telemetry.tracer",
+          "version": ""
+        },
+        "start_time": "2026-07-17 17:28:03.863787+00:00",
+        "end_time": "2026-07-17 17:28:07.968556+00:00",
+        "duration_ms": 4104.76943,
+        "session_id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+        "attributes": {
+          "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+          "gen_ai.usage.prompt_tokens": 1391,
+          "gen_ai.usage.output_tokens": 213,
+          "gen_ai.server.request.duration": 4097,
+          "gen_ai.usage.total_tokens": 1604,
+          "gen_ai.usage.completion_tokens": 213,
+          "aws.genai.span_kind": "LLM",
+          "gen_ai.event.start_time": "2026-07-17T17:28:03.863804+00:00",
+          "gen_ai.server.time_to_first_token": 1789,
+          "aws.local.environment": "bedrock-agentcore:default",
+          "gen_ai.provider.name": "strands-agents",
+          "gen_ai.operation.name": "chat",
+          "gen_ai.event.end_time": "2026-07-17T17:28:07.968518+00:00",
+          "gen_ai.usage.input_tokens": 1391,
+          "aws.genai.token_count_total": 1604,
+          "gen_ai.request.model": "global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+          "gen_ai.system": "strands-agents"
+        },
+        "events": [],
+        "span_events": [
+          {
+            "event_name": "strands.telemetry.tracer",
+            "span_id": "d708a3bf6ca30dc0",
+            "body": {
+              "output": {
+                "messages": [
+                  {
+                    "content": {
+                      "content": "[{\"text\": \"I'll process this pharmacy claim for member MEM-001 for lisinopril. Let me follow the required steps.\"}, {\"toolUse\": {\"toolUseId\": \"tooluse_wN9MkwaOmEBiBYwQ1XiSvK\", \"name\": \"lookup_formulary\", \"input\": {\"drug_name\": \"lisinopril\"}}}, {\"toolUse\": {\"toolUseId\": \"tooluse_fWNzm5a52Dn2aMs0oGtbLJ\", \"name\": \"check_coverage\", \"input\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\"}}}]"
+                    },
+                    "role": "assistant"
+                  },
+                  {
+                    "content": {
+                      "message": "[{\"text\": \"Perfect! Now I'll render the final decision based on the information gathered.\"}, {\"toolUse\": {\"toolUseId\": \"tooluse_XOZueYy7kU0yMNIffLhuVS\", \"name\": \"render_decision\", \"input\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\", \"decision\": \"APPROVED\", \"reasoning\": \"Lisinopril is a Tier 1 covered medication on the formulary. The member has active PPO coverage with deductible met. No prior authorization is required. Member copay is $10.00 for the 30-day supply. No restrictions apply.\", \"policy_section\": \"Section 4.2.1\"}}}]",
+                      "finish_reason": "tool_use"
+                    },
+                    "role": "assistant"
+                  }
+                ]
+              },
+              "input": {
+                "messages": [
+                  {
+                    "content": {
+                      "content": "[{\"text\": \"You are a claims processing agent for a health insurance company.\\n\\nFor each pharmacy claim, you MUST follow this exact process:\\n1. Look up the drug in the formulary database using the lookup_formulary tool\\n2. Check the member's coverage using the check_coverage tool\\n3. Render your decision using the render_decision tool, passing the policy\\n   section returned by the formulary lookup\\n\\nRules:\\n- Always cite the policy section from the formulary lookup in your final answer\\n- If the drug requires prior authorization, note this in your decision\\n- If the member's coverage is not active, deny the claim\\n- Never approve a claim based on your general knowledge alone \u2014 always use the tools\\n\"}]"
+                    },
+                    "role": "system"
+                  },
+                  {
+                    "content": {
+                      "content": "[{\"text\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\"}]"
+                    },
+                    "role": "user"
+                  },
+                  {
+                    "content": {
+                      "content": "[{\"toolResult\": {\"toolUseId\": \"tooluse_wN9MkwaOmEBiBYwQ1XiSvK\", \"status\": \"success\", \"content\": [{\"text\": \"{\\\"status\\\": \\\"covered\\\", \\\"tier\\\": 1, \\\"pa_required\\\": false, \\\"policy_section\\\": \\\"Section 4.2.1\\\", \\\"drug_class\\\": \\\"ACE Inhibitor\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"formulary-db\\\"}\"}]}}, {\"toolResult\": {\"toolUseId\": \"tooluse_fWNzm5a52Dn2aMs0oGtbLJ\", \"status\": \"success\", \"content\": [{\"text\": \"{\\\"coverage_active\\\": true, \\\"plan_type\\\": \\\"PPO\\\", \\\"deductible_met\\\": true, \\\"copay_amount\\\": 10.0, \\\"restrictions\\\": [], \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"coverage-policy\\\"}\"}]}}]"
+                    },
+                    "role": "tool"
+                  }
+                ]
+              }
+            },
+            "time_unix_nano": 1784309287968556300,
+            "observed_time_unix_nano": 1784309293004693200,
+            "severity_number": 9,
+            "severity_text": "",
+            "attributes": {
+              "event.name": "strands.telemetry.tracer",
+              "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84"
+            }
+          }
+        ],
+        "status": {
+          "code": "OK"
+        },
+        "traceId": "6a5a661943faf4e62a73e0a96cdf0815",
+        "endTimeUnixNano": 1784309287968556300,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_claims_agent-6fkZyvCVOE/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_claims_agent-6fkZyvCVOE-DEFAULT",
+            "telemetry.sdk.version": "1.42.1",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.18.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 4104769430,
+        "startTimeUnixNano": 1784309283863786800,
+        "parentSpanId": "16b12df55ce242d6",
+        "spanId": "d708a3bf6ca30dc0"
+      },
+      {
+        "name": "execute_tool render_decision",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a5a661943faf4e62a73e0a96cdf0815",
+        "span_id": "0e8fb3551bb0e049",
+        "parent_span_id": "16b12df55ce242d6",
+        "scope": {
+          "name": "strands.telemetry.tracer",
+          "version": ""
+        },
+        "start_time": "2026-07-17 17:28:07.969049+00:00",
+        "end_time": "2026-07-17 17:28:07.970808+00:00",
+        "duration_ms": 1.758907,
+        "session_id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+        "attributes": {
+          "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+          "gen_ai.tool.status": "success",
+          "gen_ai.tool.call.id": "tooluse_XOZueYy7kU0yMNIffLhuVS",
+          "gen_ai.tool.description": "Render the final claims decision with a policy citation.",
+          "gen_ai.tool.json_schema": "{\"properties\": {\"member_id\": {\"description\": \"Parameter member_id\", \"type\": \"string\"}, \"drug_name\": {\"description\": \"Parameter drug_name\", \"type\": \"string\"}, \"decision\": {\"description\": \"Parameter decision\", \"type\": \"string\"}, \"reasoning\": {\"description\": \"Parameter reasoning\", \"type\": \"string\"}, \"policy_section\": {\"description\": \"Parameter policy_section\", \"type\": \"string\"}}, \"required\": [\"member_id\", \"drug_name\", \"decision\", \"reasoning\", \"policy_section\"], \"type\": \"object\"}",
+          "aws.genai.span_kind": "TOOL",
+          "gen_ai.event.start_time": "2026-07-17T17:28:07.969084+00:00",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "gen_ai.provider.name": "strands-agents",
+          "gen_ai.operation.name": "execute_tool",
+          "gen_ai.event.end_time": "2026-07-17T17:28:07.970788+00:00",
+          "gen_ai.tool.name": "render_decision",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+          "gen_ai.system": "strands-agents"
+        },
+        "events": [],
+        "span_events": [
+          {
+            "event_name": "strands.telemetry.tracer",
+            "span_id": "0e8fb3551bb0e049",
+            "body": {
+              "output": {
+                "messages": [
+                  {
+                    "content": {
+                      "message": "[{\"text\": \"{\\\"decision\\\": \\\"APPROVED\\\", \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"reasoning\\\": \\\"Lisinopril is a Tier 1 covered medication on the formulary. The member has active PPO coverage with deductible met. No prior authorization is required. Member copay is $10.00 for the 30-day supply. No restrictions apply.\\\", \\\"citations\\\": [\\\"Section 4.2.1\\\"], \\\"source\\\": \\\"decision-engine\\\"}\"}]",
+                      "id": "tooluse_XOZueYy7kU0yMNIffLhuVS"
+                    },
+                    "role": "assistant"
+                  }
+                ]
+              },
+              "input": {
+                "messages": [
+                  {
+                    "content": {
+                      "content": "{\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\", \"decision\": \"APPROVED\", \"reasoning\": \"Lisinopril is a Tier 1 covered medication on the formulary. The member has active PPO coverage with deductible met. No prior authorization is required. Member copay is $10.00 for the 30-day supply. No restrictions apply.\", \"policy_section\": \"Section 4.2.1\"}",
+                      "role": "tool",
+                      "id": "tooluse_XOZueYy7kU0yMNIffLhuVS"
+                    },
+                    "role": "tool"
+                  }
+                ]
+              }
+            },
+            "time_unix_nano": 1784309287970808000,
+            "observed_time_unix_nano": 1784309293004877300,
+            "severity_number": 9,
+            "severity_text": "",
+            "attributes": {
+              "event.name": "strands.telemetry.tracer",
+              "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84"
+            }
+          }
+        ],
+        "status": {
+          "code": "OK"
+        },
+        "traceId": "6a5a661943faf4e62a73e0a96cdf0815",
+        "endTimeUnixNano": 1784309287970808000,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_claims_agent-6fkZyvCVOE/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_claims_agent-6fkZyvCVOE-DEFAULT",
+            "telemetry.sdk.version": "1.42.1",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.18.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 1758907,
+        "startTimeUnixNano": 1784309287969049000,
+        "parentSpanId": "16b12df55ce242d6",
+        "spanId": "0e8fb3551bb0e049"
+      },
+      {
+        "name": "execute_event_loop_cycle",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a5a661943faf4e62a73e0a96cdf0815",
+        "span_id": "16b12df55ce242d6",
+        "parent_span_id": "ecbce76a2fac3bc3",
+        "scope": {
+          "name": "strands.telemetry.tracer",
+          "version": ""
+        },
+        "start_time": "2026-07-17 17:28:03.863332+00:00",
+        "end_time": "2026-07-17 17:28:07.971005+00:00",
+        "duration_ms": 4107.673443,
+        "session_id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+        "attributes": {
+          "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+          "gen_ai.operation.name": "execute_event_loop_cycle",
+          "gen_ai.event.end_time": "2026-07-17T17:28:07.970992+00:00",
+          "event_loop.cycle_id": "a8ab8ccd-1004-4703-981e-4523c12b89c3",
+          "gen_ai.event.start_time": "2026-07-17T17:28:03.863354+00:00",
+          "event_loop.parent_cycle_id": "5f6c8c97-4f0e-4c06-ba67-6d095a429724",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+          "gen_ai.system": "strands-agents",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "gen_ai.provider.name": "strands-agents"
+        },
+        "events": [],
+        "span_events": [
+          {
+            "event_name": "strands.telemetry.tracer",
+            "span_id": "16b12df55ce242d6",
+            "body": {
+              "output": {
+                "messages": [
+                  {
+                    "content": {
+                      "content": "[{\"text\": \"I'll process this pharmacy claim for member MEM-001 for lisinopril. Let me follow the required steps.\"}, {\"toolUse\": {\"toolUseId\": \"tooluse_wN9MkwaOmEBiBYwQ1XiSvK\", \"name\": \"lookup_formulary\", \"input\": {\"drug_name\": \"lisinopril\"}}}, {\"toolUse\": {\"toolUseId\": \"tooluse_fWNzm5a52Dn2aMs0oGtbLJ\", \"name\": \"check_coverage\", \"input\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\"}}}]"
+                    },
+                    "role": "assistant"
+                  },
+                  {
+                    "content": {
+                      "message": "[{\"text\": \"Perfect! Now I'll render the final decision based on the information gathered.\"}, {\"toolUse\": {\"toolUseId\": \"tooluse_XOZueYy7kU0yMNIffLhuVS\", \"name\": \"render_decision\", \"input\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\", \"decision\": \"APPROVED\", \"reasoning\": \"Lisinopril is a Tier 1 covered medication on the formulary. The member has active PPO coverage with deductible met. No prior authorization is required. Member copay is $10.00 for the 30-day supply. No restrictions apply.\", \"policy_section\": \"Section 4.2.1\"}}}]",
+                      "tool.result": "[{\"toolResult\": {\"toolUseId\": \"tooluse_XOZueYy7kU0yMNIffLhuVS\", \"status\": \"success\", \"content\": [{\"text\": \"{\\\"decision\\\": \\\"APPROVED\\\", \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"reasoning\\\": \\\"Lisinopril is a Tier 1 covered medication on the formulary. The member has active PPO coverage with deductible met. No prior authorization is required. Member copay is $10.00 for the 30-day supply. No restrictions apply.\\\", \\\"citations\\\": [\\\"Section 4.2.1\\\"], \\\"source\\\": \\\"decision-engine\\\"}\"}]}}]"
+                    },
+                    "role": "assistant"
+                  },
+                  {
+                    "content": "[{\"toolResult\": {\"toolUseId\": \"tooluse_XOZueYy7kU0yMNIffLhuVS\", \"status\": \"success\", \"content\": [{\"text\": \"{\\\"decision\\\": \\\"APPROVED\\\", \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"reasoning\\\": \\\"Lisinopril is a Tier 1 covered medication on the formulary. The member has active PPO coverage with deductible met. No prior authorization is required. Member copay is $10.00 for the 30-day supply. No restrictions apply.\\\", \\\"citations\\\": [\\\"Section 4.2.1\\\"], \\\"source\\\": \\\"decision-engine\\\"}\"}]}}]",
+                    "role": "assistant"
+                  }
+                ]
+              },
+              "input": {
+                "messages": [
+                  {
+                    "content": {
+                      "content": "[{\"text\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\"}]"
+                    },
+                    "role": "user"
+                  },
+                  {
+                    "content": {
+                      "content": "[{\"toolResult\": {\"toolUseId\": \"tooluse_wN9MkwaOmEBiBYwQ1XiSvK\", \"status\": \"success\", \"content\": [{\"text\": \"{\\\"status\\\": \\\"covered\\\", \\\"tier\\\": 1, \\\"pa_required\\\": false, \\\"policy_section\\\": \\\"Section 4.2.1\\\", \\\"drug_class\\\": \\\"ACE Inhibitor\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"formulary-db\\\"}\"}]}}, {\"toolResult\": {\"toolUseId\": \"tooluse_fWNzm5a52Dn2aMs0oGtbLJ\", \"status\": \"success\", \"content\": [{\"text\": \"{\\\"coverage_active\\\": true, \\\"plan_type\\\": \\\"PPO\\\", \\\"deductible_met\\\": true, \\\"copay_amount\\\": 10.0, \\\"restrictions\\\": [], \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"source\\\": \\\"coverage-policy\\\"}\"}]}}]"
+                    },
+                    "role": "tool"
+                  }
+                ]
+              }
+            },
+            "time_unix_nano": 1784309287971005200,
+            "observed_time_unix_nano": 1784309293005021400,
+            "severity_number": 9,
+            "severity_text": "",
+            "attributes": {
+              "event.name": "strands.telemetry.tracer",
+              "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84"
+            }
+          }
+        ],
+        "status": {
+          "code": "OK"
+        },
+        "traceId": "6a5a661943faf4e62a73e0a96cdf0815",
+        "endTimeUnixNano": 1784309287971005200,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_claims_agent-6fkZyvCVOE/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_claims_agent-6fkZyvCVOE-DEFAULT",
+            "telemetry.sdk.version": "1.42.1",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.18.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 4107673443,
+        "startTimeUnixNano": 1784309283863331800,
+        "parentSpanId": "ecbce76a2fac3bc3",
+        "spanId": "16b12df55ce242d6"
+      },
+      {
+        "name": "chat global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+        "kind": "CLIENT",
+        "source": "adot_cw",
+        "trace_id": "6a5a661943faf4e62a73e0a96cdf0815",
+        "span_id": "5cc31acfe844d29d",
+        "parent_span_id": "287b1baaf95e8005",
+        "scope": {
+          "name": "opentelemetry.instrumentation.botocore.bedrock-runtime",
+          "version": "0.63b1"
+        },
+        "start_time": "2026-07-17 17:28:07.972400+00:00",
+        "end_time": "2026-07-17 17:28:11.939341+00:00",
+        "duration_ms": 3966.941204,
+        "session_id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+        "attributes": {
+          "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+          "rpc.service": "Bedrock Runtime",
+          "aws.remote.resource.identifier": "global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "aws.remote.operation": "ConverseStream",
+          "gen_ai.provider.name": "aws.bedrock",
+          "server.address": "bedrock-runtime.us-west-2.amazonaws.com",
+          "aws.request_id": "eda9b2a4-4422-47f8-9c50-5deef8c37e88",
+          "aws.local.operation": "UnmappedOperation",
+          "aws.span.kind": "CLIENT",
+          "aws.auth.region": "us-west-2",
+          "rpc.method": "ConverseStream",
+          "gen_ai.response.finish_reasons": [
+            "end_turn"
+          ],
+          "server.port": 443,
+          "gen_ai.request.model": "global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+          "http.response.status_code": 200,
+          "gen_ai.system": "aws.bedrock",
+          "telemetry.extended": "true",
+          "gen_ai.usage.output_tokens": 150,
+          "aws.genai.span_kind": "LLM",
+          "rpc.system": "aws-api",
+          "aws.remote.service": "AWS::BedrockRuntime",
+          "http.status_code": 200,
+          "aws.region": "us-west-2",
+          "aws.remote.resource.type": "AWS::Bedrock::Model",
+          "gen_ai.operation.name": "chat",
+          "gen_ai.usage.input_tokens": 1728,
+          "aws.genai.token_count_total": 1878,
+          "retry_attempts": 0,
+          "PlatformType": "AWS::BedrockAgentCore",
+          "aws.auth.account.access_key": "REDACTED",
+          "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84"
+        },
+        "events": [],
+        "span_events": [],
+        "status": {
+          "code": "UNSET"
+        },
+        "traceId": "6a5a661943faf4e62a73e0a96cdf0815",
+        "endTimeUnixNano": 1784309291939341000,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_claims_agent-6fkZyvCVOE/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_claims_agent-6fkZyvCVOE-DEFAULT",
+            "telemetry.sdk.version": "1.42.1",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.18.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 3966941204,
+        "startTimeUnixNano": 1784309287972399900,
+        "parentSpanId": "287b1baaf95e8005",
+        "spanId": "5cc31acfe844d29d"
+      },
+      {
+        "name": "chat",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a5a661943faf4e62a73e0a96cdf0815",
+        "span_id": "287b1baaf95e8005",
+        "parent_span_id": "867c12a2e17890cf",
+        "scope": {
+          "name": "strands.telemetry.tracer",
+          "version": ""
+        },
+        "start_time": "2026-07-17 17:28:07.971755+00:00",
+        "end_time": "2026-07-17 17:28:11.940466+00:00",
+        "duration_ms": 3968.711195,
+        "session_id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+        "attributes": {
+          "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+          "gen_ai.usage.prompt_tokens": 1728,
+          "gen_ai.usage.output_tokens": 150,
+          "gen_ai.server.request.duration": 3961,
+          "gen_ai.usage.total_tokens": 1878,
+          "gen_ai.usage.completion_tokens": 150,
+          "aws.genai.span_kind": "LLM",
+          "gen_ai.event.start_time": "2026-07-17T17:28:07.971771+00:00",
+          "gen_ai.server.time_to_first_token": 1666,
+          "aws.local.environment": "bedrock-agentcore:default",
+          "gen_ai.provider.name": "strands-agents",
+          "gen_ai.operation.name": "chat",
+          "gen_ai.event.end_time": "2026-07-17T17:28:11.940427+00:00",
+          "gen_ai.usage.input_tokens": 1728,
+          "aws.genai.token_count_total": 1878,
+          "gen_ai.request.model": "global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+          "gen_ai.system": "strands-agents"
+        },
+        "events": [],
+        "span_events": [
+          {
+            "event_name": "strands.telemetry.tracer",
+            "span_id": "287b1baaf95e8005",
+            "body": {
+              "output": {
+                "messages": [
+                  {
+                    "content": {
+                      "content": "[{\"text\": \"Perfect! Now I'll render the final decision based on the information gathered.\"}, {\"toolUse\": {\"toolUseId\": \"tooluse_XOZueYy7kU0yMNIffLhuVS\", \"name\": \"render_decision\", \"input\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\", \"decision\": \"APPROVED\", \"reasoning\": \"Lisinopril is a Tier 1 covered medication on the formulary. The member has active PPO coverage with deductible met. No prior authorization is required. Member copay is $10.00 for the 30-day supply. No restrictions apply.\", \"policy_section\": \"Section 4.2.1\"}}}]"
+                    },
+                    "role": "assistant"
+                  },
+                  {
+                    "content": {
+                      "message": "[{\"text\": \"## Claim Decision: **APPROVED**\\n\\n**Member ID:** MEM-001  \\n**Drug:** Lisinopril (30-day supply)  \\n**Policy Citation:** Section 4.2.1\\n\\n**Summary:**\\n- \u2713 Drug is covered on formulary (Tier 1 - ACE Inhibitor)\\n- \u2713 Member coverage is active (PPO plan)\\n- \u2713 Deductible has been met\\n- \u2713 No prior authorization required\\n- \u2713 No restrictions apply\\n\\n**Member Copay:** $10.00\\n\\nThe claim has been approved and can be processed for payment.\"}]",
+                      "finish_reason": "end_turn"
+                    },
+                    "role": "assistant"
+                  }
+                ]
+              },
+              "input": {
+                "messages": [
+                  {
+                    "content": {
+                      "content": "[{\"text\": \"You are a claims processing agent for a health insurance company.\\n\\nFor each pharmacy claim, you MUST follow this exact process:\\n1. Look up the drug in the formulary database using the lookup_formulary tool\\n2. Check the member's coverage using the check_coverage tool\\n3. Render your decision using the render_decision tool, passing the policy\\n   section returned by the formulary lookup\\n\\nRules:\\n- Always cite the policy section from the formulary lookup in your final answer\\n- If the drug requires prior authorization, note this in your decision\\n- If the member's coverage is not active, deny the claim\\n- Never approve a claim based on your general knowledge alone \u2014 always use the tools\\n\"}]"
+                    },
+                    "role": "system"
+                  },
+                  {
+                    "content": {
+                      "content": "[{\"text\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\"}]"
+                    },
+                    "role": "user"
+                  },
+                  {
+                    "content": {
+                      "content": "[{\"toolResult\": {\"toolUseId\": \"tooluse_XOZueYy7kU0yMNIffLhuVS\", \"status\": \"success\", \"content\": [{\"text\": \"{\\\"decision\\\": \\\"APPROVED\\\", \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"reasoning\\\": \\\"Lisinopril is a Tier 1 covered medication on the formulary. The member has active PPO coverage with deductible met. No prior authorization is required. Member copay is $10.00 for the 30-day supply. No restrictions apply.\\\", \\\"citations\\\": [\\\"Section 4.2.1\\\"], \\\"source\\\": \\\"decision-engine\\\"}\"}]}}]"
+                    },
+                    "role": "tool"
+                  }
+                ]
+              }
+            },
+            "time_unix_nano": 1784309291940466000,
+            "observed_time_unix_nano": 1784309293005243000,
+            "severity_number": 9,
+            "severity_text": "",
+            "attributes": {
+              "event.name": "strands.telemetry.tracer",
+              "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84"
+            }
+          }
+        ],
+        "status": {
+          "code": "OK"
+        },
+        "traceId": "6a5a661943faf4e62a73e0a96cdf0815",
+        "endTimeUnixNano": 1784309291940466000,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_claims_agent-6fkZyvCVOE/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_claims_agent-6fkZyvCVOE-DEFAULT",
+            "telemetry.sdk.version": "1.42.1",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.18.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 3968711195,
+        "startTimeUnixNano": 1784309287971754800,
+        "parentSpanId": "867c12a2e17890cf",
+        "spanId": "287b1baaf95e8005"
+      },
+      {
+        "name": "execute_event_loop_cycle",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a5a661943faf4e62a73e0a96cdf0815",
+        "span_id": "867c12a2e17890cf",
+        "parent_span_id": "ecbce76a2fac3bc3",
+        "scope": {
+          "name": "strands.telemetry.tracer",
+          "version": ""
+        },
+        "start_time": "2026-07-17 17:28:07.971246+00:00",
+        "end_time": "2026-07-17 17:28:11.940926+00:00",
+        "duration_ms": 3969.679836,
+        "session_id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+        "attributes": {
+          "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+          "gen_ai.operation.name": "execute_event_loop_cycle",
+          "gen_ai.event.end_time": "2026-07-17T17:28:11.940909+00:00",
+          "event_loop.cycle_id": "a4d607ed-391d-42e6-8691-bae58fc79f4b",
+          "gen_ai.event.start_time": "2026-07-17T17:28:07.971269+00:00",
+          "event_loop.parent_cycle_id": "a8ab8ccd-1004-4703-981e-4523c12b89c3",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+          "gen_ai.system": "strands-agents",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "gen_ai.provider.name": "strands-agents"
+        },
+        "events": [],
+        "span_events": [
+          {
+            "event_name": "strands.telemetry.tracer",
+            "span_id": "867c12a2e17890cf",
+            "body": {
+              "output": {
+                "messages": [
+                  {
+                    "content": {
+                      "content": "[{\"text\": \"Perfect! Now I'll render the final decision based on the information gathered.\"}, {\"toolUse\": {\"toolUseId\": \"tooluse_XOZueYy7kU0yMNIffLhuVS\", \"name\": \"render_decision\", \"input\": {\"member_id\": \"MEM-001\", \"drug_name\": \"lisinopril\", \"decision\": \"APPROVED\", \"reasoning\": \"Lisinopril is a Tier 1 covered medication on the formulary. The member has active PPO coverage with deductible met. No prior authorization is required. Member copay is $10.00 for the 30-day supply. No restrictions apply.\", \"policy_section\": \"Section 4.2.1\"}}}]"
+                    },
+                    "role": "assistant"
+                  }
+                ]
+              },
+              "input": {
+                "messages": [
+                  {
+                    "content": {
+                      "content": "[{\"text\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\"}]"
+                    },
+                    "role": "user"
+                  },
+                  {
+                    "content": {
+                      "content": "[{\"toolResult\": {\"toolUseId\": \"tooluse_XOZueYy7kU0yMNIffLhuVS\", \"status\": \"success\", \"content\": [{\"text\": \"{\\\"decision\\\": \\\"APPROVED\\\", \\\"member_id\\\": \\\"MEM-001\\\", \\\"drug_name\\\": \\\"lisinopril\\\", \\\"reasoning\\\": \\\"Lisinopril is a Tier 1 covered medication on the formulary. The member has active PPO coverage with deductible met. No prior authorization is required. Member copay is $10.00 for the 30-day supply. No restrictions apply.\\\", \\\"citations\\\": [\\\"Section 4.2.1\\\"], \\\"source\\\": \\\"decision-engine\\\"}\"}]}}]"
+                    },
+                    "role": "tool"
+                  }
+                ]
+              }
+            },
+            "time_unix_nano": 1784309291940926200,
+            "observed_time_unix_nano": 1784309293005388800,
+            "severity_number": 9,
+            "severity_text": "",
+            "attributes": {
+              "event.name": "strands.telemetry.tracer",
+              "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84"
+            }
+          }
+        ],
+        "status": {
+          "code": "OK"
+        },
+        "traceId": "6a5a661943faf4e62a73e0a96cdf0815",
+        "endTimeUnixNano": 1784309291940926200,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_claims_agent-6fkZyvCVOE/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_claims_agent-6fkZyvCVOE-DEFAULT",
+            "telemetry.sdk.version": "1.42.1",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.18.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 3969679836,
+        "startTimeUnixNano": 1784309287971246300,
+        "parentSpanId": "ecbce76a2fac3bc3",
+        "spanId": "867c12a2e17890cf"
+      },
+      {
+        "name": "invoke_agent Strands Agents",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a5a661943faf4e62a73e0a96cdf0815",
+        "span_id": "ecbce76a2fac3bc3",
+        "parent_span_id": "4d0d6885a02562e1",
+        "scope": {
+          "name": "strands.telemetry.tracer",
+          "version": ""
+        },
+        "start_time": "2026-07-17 17:28:00.655446+00:00",
+        "end_time": "2026-07-17 17:28:11.941153+00:00",
+        "duration_ms": 11285.706949,
+        "session_id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+        "attributes": {
+          "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+          "gen_ai.usage.prompt_tokens": 4162,
+          "gen_ai.usage.output_tokens": 512,
+          "gen_ai.usage.cache_write_input_tokens": 0,
+          "gen_ai.agent.name": "Strands Agents",
+          "gen_ai.usage.total_tokens": 4674,
+          "gen_ai.usage.completion_tokens": 512,
+          "aws.genai.span_kind": "AGENT",
+          "gen_ai.event.start_time": "2026-07-17T17:28:00.655487+00:00",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "gen_ai.provider.name": "strands-agents",
+          "gen_ai.operation.name": "invoke_agent",
+          "gen_ai.event.end_time": "2026-07-17T17:28:11.941129+00:00",
+          "gen_ai.usage.input_tokens": 4162,
+          "aws.genai.token_count_total": 4674,
+          "gen_ai.request.model": "global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+          "gen_ai.usage.cache_read_input_tokens": 0,
+          "gen_ai.agent.tools": "[\"lookup_formulary\", \"check_coverage\", \"render_decision\"]",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+          "gen_ai.system": "strands-agents"
+        },
+        "events": [],
+        "span_events": [
+          {
+            "event_name": "strands.telemetry.tracer",
+            "span_id": "ecbce76a2fac3bc3",
+            "body": {
+              "output": {
+                "messages": [
+                  {
+                    "content": {
+                      "message": "## Claim Decision: **APPROVED**\n\n**Member ID:** MEM-001  \n**Drug:** Lisinopril (30-day supply)  \n**Policy Citation:** Section 4.2.1\n\n**Summary:**\n- \u2713 Drug is covered on formulary (Tier 1 - ACE Inhibitor)\n- \u2713 Member coverage is active (PPO plan)\n- \u2713 Deductible has been met\n- \u2713 No prior authorization required\n- \u2713 No restrictions apply\n\n**Member Copay:** $10.00\n\nThe claim has been approved and can be processed for payment.\n",
+                      "finish_reason": "end_turn"
+                    },
+                    "role": "assistant"
+                  }
+                ]
+              },
+              "input": {
+                "messages": [
+                  {
+                    "content": "You are a claims processing agent for a health insurance company.\n\nFor each pharmacy claim, you MUST follow this exact process:\n1. Look up the drug in the formulary database using the lookup_formulary tool\n2. Check the member's coverage using the check_coverage tool\n3. Render your decision using the render_decision tool, passing the policy\n   section returned by the formulary lookup\n\nRules:\n- Always cite the policy section from the formulary lookup in your final answer\n- If the drug requires prior authorization, note this in your decision\n- If the member's coverage is not active, deny the claim\n- Never approve a claim based on your general knowledge alone \u2014 always use the tools\n",
+                    "role": "system"
+                  },
+                  {
+                    "content": {
+                      "content": "[{\"text\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\"}]"
+                    },
+                    "role": "user"
+                  }
+                ]
+              }
+            },
+            "time_unix_nano": 1784309291941153300,
+            "observed_time_unix_nano": 1784309293005516000,
+            "severity_number": 9,
+            "severity_text": "",
+            "attributes": {
+              "event.name": "strands.telemetry.tracer",
+              "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84"
+            }
+          }
+        ],
+        "status": {
+          "code": "OK"
+        },
+        "traceId": "6a5a661943faf4e62a73e0a96cdf0815",
+        "endTimeUnixNano": 1784309291941153300,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_claims_agent-6fkZyvCVOE/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_claims_agent-6fkZyvCVOE-DEFAULT",
+            "telemetry.sdk.version": "1.42.1",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.18.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 11285706949,
+        "startTimeUnixNano": 1784309280655446300,
+        "parentSpanId": "4d0d6885a02562e1",
+        "spanId": "ecbce76a2fac3bc3"
+      },
+      {
+        "name": "POST /invocations",
+        "kind": "SERVER",
+        "source": "adot_cw",
+        "trace_id": "6a5a661943faf4e62a73e0a96cdf0815",
+        "span_id": "4d0d6885a02562e1",
+        "parent_span_id": "1abc48b7d028228a",
+        "scope": {
+          "name": "opentelemetry.instrumentation.starlette",
+          "version": "0.63b1"
+        },
+        "start_time": "2026-07-17 17:28:00.534684+00:00",
+        "end_time": "2026-07-17 17:28:11.943248+00:00",
+        "duration_ms": 11408.563797,
+        "session_id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+        "attributes": {
+          "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+          "net.peer.port": 48834,
+          "telemetry.extended": "true",
+          "http.target": "/invocations",
+          "http.flavor": "1.1",
+          "http.url": "http://runtime.example.internal/invocations",
+          "net.peer.ip": "127.0.0.1",
+          "http.host": "127.0.0.1:8080",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "http.status_code": 200,
+          "aws.local.operation": "POST /invocations",
+          "aws.span.kind": "SERVER",
+          "http.server_name": "runtime.example.internal",
+          "net.host.port": 8080,
+          "http.route": "/invocations",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "http.method": "POST",
+          "http.response.status_code": 200,
+          "session.id": "cdb1bae5-d5d2-41fd-ae71-64a7c7eecd84",
+          "http.scheme": "http"
+        },
+        "events": [],
+        "span_events": [],
+        "status": {
+          "code": "UNSET"
+        },
+        "traceId": "6a5a661943faf4e62a73e0a96cdf0815",
+        "endTimeUnixNano": 1784309291943248100,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_claims_agent-6fkZyvCVOE/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_claims_agent-6fkZyvCVOE-DEFAULT",
+            "telemetry.sdk.version": "1.42.1",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.18.0-aws"
+          }
+        },
+        "flags": 768,
+        "durationNano": 11408563797,
+        "startTimeUnixNano": 1784309280534684400,
+        "parentSpanId": "1abc48b7d028228a",
+        "spanId": "4d0d6885a02562e1"
+      }
+    ]
+  },
+  "evaluationTarget": {
+    "traceIds": [
+      "6a5a661943faf4e62a73e0a96cdf0815"
+    ]
+  }
+}

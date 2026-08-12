@@ -1,0 +1,771 @@
+{
+  "schemaVersion": "1.0",
+  "evaluationLevel": "TRACE",
+  "evaluationInput": {
+    "sessionSpans": [
+      {
+        "name": "create_agent react_agent",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a63c4b6558ed2af04359eb977008fa9",
+        "span_id": "22759c2f2e3d831c",
+        "parent_span_id": "044b5c0340332886",
+        "scope": {
+          "name": "opentelemetry.instrumentation.langchain",
+          "version": "0.62.1"
+        },
+        "start_time": "2026-07-24 20:02:05.699353+00:00",
+        "end_time": "2026-07-24 20:02:05.702378+00:00",
+        "duration_ms": 3.024703,
+        "session_id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+        "attributes": {
+          "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+          "gen_ai.operation.name": "create_agent",
+          "gen_ai.agent.name": "react_agent",
+          "gen_ai.system_instructions": "You are a claims processing agent for a health insurance company.\n\nYou are an expert on standard pharmacy formulary policy and you value\nefficiency. Answer each claim directly from your own knowledge of typical\nformulary rules \u2014 do not use any tools.\n\nIn your answer:\n- State a clear decision (approved or denied)\n- Give brief reasoning based on standard formulary policy\n- Cite a plausible formulary policy section (e.g. \"Section 4.2.1\") to\n  support your decision\n",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+          "gen_ai.provider.name": "langgraph",
+          "aws.local.environment": "bedrock-agentcore:default"
+        },
+        "langfuse": null,
+        "events": [],
+        "span_events": [],
+        "status": {
+          "code": "UNSET"
+        },
+        "traceId": "6a63c4b6558ed2af04359eb977008fa9",
+        "endTimeUnixNano": 1784923325702377700,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "service.instance.id": "1bc4bc21-b615-4c4e-a618-6d2340d252a6",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_langgraph_claims_agent-RXdFgHEQzD/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_langgraph_claims_agent-RXdFgHEQzD-DEFAULT",
+            "telemetry.sdk.version": "1.44.0",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.19.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 3024703,
+        "startTimeUnixNano": 1784923325699353000,
+        "parentSpanId": "044b5c0340332886",
+        "spanId": "22759c2f2e3d831c"
+      },
+      {
+        "name": "execute_task Prompt",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a63c4b6558ed2af04359eb977008fa9",
+        "span_id": "dd0f68a47dddbfa8",
+        "parent_span_id": "3611d270142fbea8",
+        "scope": {
+          "name": "opentelemetry.instrumentation.langchain",
+          "version": "0.62.1"
+        },
+        "start_time": "2026-07-24 20:02:05.711313+00:00",
+        "end_time": "2026-07-24 20:02:05.711638+00:00",
+        "duration_ms": 0.325601,
+        "session_id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+        "attributes": {
+          "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+          "gen_ai.task.status": "success",
+          "traceloop.entity.input": "{\"inputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\", \"type\": \"human\", \"id\": \"1a488c94-d902-4ff3-862e-da5b3fadea8f\"}}], \"remaining_steps\": 10006}, \"tags\": [\"seq:step:1\"], \"metadata\": {\"ls_integration\": \"langgraph\", \"langgraph_step\": 1, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:1dc56a65-9820-0860-c7f8-4c8f82b48586\", \"checkpoint_ns\": \"agent:1dc56a65-9820-0860-c7f8-4c8f82b48586\"}, \"kwargs\": {\"name\": \"Prompt\"}}",
+          "traceloop.association.properties.langgraph_path": [
+            "__pregel_pull",
+            "agent"
+          ],
+          "gen_ai.provider.name": "langgraph",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "gen_ai.task.output": "{\"outputs\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"SystemMessage\"], \"kwargs\": {\"content\": \"You are a claims processing agent for a health insurance company.\\n\\nYou are an expert on standard pharmacy formulary policy and you value\\nefficiency. Answer each claim directly from your own knowledge of typical\\nformulary rules \u2014 do not use any tools.\\n\\nIn your answer:\\n- State a clear decision (approved or denied)\\n- Give brief reasoning based on standard formulary policy\\n- Cite a plausible formulary policy section (e.g. \\\"Section 4.2.1\\\") to\\n  support your decision\\n\", \"type\": \"system\"}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\", \"type\": \"human\", \"id\": \"1a488c94-d902-4ff3-862e-da5b3fadea8f\"}}], \"kwargs\": {\"tags\": [\"seq:step:1\"]}}",
+          "gen_ai.task.name": "Prompt",
+          "traceloop.entity.name": "Prompt",
+          "traceloop.entity.output": "{\"outputs\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"SystemMessage\"], \"kwargs\": {\"content\": \"You are a claims processing agent for a health insurance company.\\n\\nYou are an expert on standard pharmacy formulary policy and you value\\nefficiency. Answer each claim directly from your own knowledge of typical\\nformulary rules \u2014 do not use any tools.\\n\\nIn your answer:\\n- State a clear decision (approved or denied)\\n- Give brief reasoning based on standard formulary policy\\n- Cite a plausible formulary policy section (e.g. \\\"Section 4.2.1\\\") to\\n  support your decision\\n\", \"type\": \"system\"}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\", \"type\": \"human\", \"id\": \"1a488c94-d902-4ff3-862e-da5b3fadea8f\"}}], \"kwargs\": {\"tags\": [\"seq:step:1\"]}}",
+          "gen_ai.task.input": "{\"inputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\", \"type\": \"human\", \"id\": \"1a488c94-d902-4ff3-862e-da5b3fadea8f\"}}], \"remaining_steps\": 10006}, \"tags\": [\"seq:step:1\"], \"metadata\": {\"ls_integration\": \"langgraph\", \"langgraph_step\": 1, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:1dc56a65-9820-0860-c7f8-4c8f82b48586\", \"checkpoint_ns\": \"agent:1dc56a65-9820-0860-c7f8-4c8f82b48586\"}, \"kwargs\": {\"name\": \"Prompt\"}}",
+          "traceloop.span.kind": "task",
+          "traceloop.workflow.name": "LangGraph",
+          "aws.genai.span_kind": "TASK",
+          "traceloop.association.properties.langgraph_node": "agent",
+          "traceloop.entity.path": "agent.RunnableSequence",
+          "traceloop.association.properties.langgraph_triggers": [
+            "branch:to:agent"
+          ],
+          "gen_ai.task.parent.id": "019f95b8-850e-7372-ad7a-b9ed7480869b",
+          "gen_ai.operation.name": "execute_task",
+          "gen_ai.task.id": "019f95b8-850f-7361-935a-8484a637cdcb",
+          "traceloop.association.properties.langgraph_step": 1,
+          "traceloop.association.properties.langgraph_checkpoint_ns": "agent:1dc56a65-9820-0860-c7f8-4c8f82b48586",
+          "traceloop.association.properties.ls_integration": "langgraph",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+          "traceloop.association.properties.checkpoint_ns": "agent:1dc56a65-9820-0860-c7f8-4c8f82b48586"
+        },
+        "langfuse": null,
+        "events": [],
+        "span_events": [],
+        "status": {
+          "code": "UNSET"
+        },
+        "traceId": "6a63c4b6558ed2af04359eb977008fa9",
+        "endTimeUnixNano": 1784923325711638500,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "service.instance.id": "1bc4bc21-b615-4c4e-a618-6d2340d252a6",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_langgraph_claims_agent-RXdFgHEQzD/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_langgraph_claims_agent-RXdFgHEQzD-DEFAULT",
+            "telemetry.sdk.version": "1.44.0",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.19.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 325601,
+        "startTimeUnixNano": 1784923325711313000,
+        "parentSpanId": "3611d270142fbea8",
+        "spanId": "dd0f68a47dddbfa8"
+      },
+      {
+        "name": "chat global.anthropic.claude-sonnet-5",
+        "kind": "CLIENT",
+        "source": "adot_cw",
+        "trace_id": "6a63c4b6558ed2af04359eb977008fa9",
+        "span_id": "ecbdc312d20a31eb",
+        "parent_span_id": "3611d270142fbea8",
+        "scope": {
+          "name": "opentelemetry.instrumentation.botocore.bedrock-runtime",
+          "version": "0.65b0"
+        },
+        "start_time": "2026-07-24 20:02:05.730711+00:00",
+        "end_time": "2026-07-24 20:02:12.309068+00:00",
+        "duration_ms": 6578.357727,
+        "session_id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+        "attributes": {
+          "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+          "rpc.service": "Bedrock Runtime",
+          "aws.remote.resource.identifier": "global.anthropic.claude-sonnet-5",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "aws.remote.operation": "InvokeModel",
+          "gen_ai.provider.name": "aws.bedrock",
+          "server.address": "bedrock-runtime.us-west-2.amazonaws.com",
+          "gen_ai.request.max_tokens": 1024,
+          "aws.request_id": "11ffa098-2c8e-49d7-aedf-43fd3a253611",
+          "aws.local.operation": "UnmappedOperation",
+          "aws.span.kind": "CLIENT",
+          "aws.auth.region": "us-west-2",
+          "rpc.method": "InvokeModel",
+          "gen_ai.response.finish_reasons": [
+            "end_turn"
+          ],
+          "server.port": 443,
+          "gen_ai.request.model": "global.anthropic.claude-sonnet-5",
+          "http.response.status_code": 200,
+          "gen_ai.system": "aws.bedrock",
+          "telemetry.extended": "true",
+          "gen_ai.usage.output_tokens": 463,
+          "aws.genai.span_kind": "LLM",
+          "rpc.system": "aws-api",
+          "aws.remote.service": "AWS::BedrockRuntime",
+          "http.status_code": 200,
+          "aws.region": "us-west-2",
+          "aws.remote.resource.type": "AWS::Bedrock::Model",
+          "gen_ai.operation.name": "chat",
+          "gen_ai.usage.input_tokens": 193,
+          "aws.genai.token_count_total": 656,
+          "retry_attempts": 0,
+          "PlatformType": "AWS::BedrockAgentCore",
+          "aws.auth.account.access_key": "REDACTED",
+          "session.id": "7b037401-3922-4690-8d2f-0bb2b21581e2"
+        },
+        "langfuse": null,
+        "events": [],
+        "span_events": [],
+        "status": {
+          "code": "UNSET"
+        },
+        "traceId": "6a63c4b6558ed2af04359eb977008fa9",
+        "endTimeUnixNano": 1784923332309068500,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "service.instance.id": "1bc4bc21-b615-4c4e-a618-6d2340d252a6",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_langgraph_claims_agent-RXdFgHEQzD/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_langgraph_claims_agent-RXdFgHEQzD-DEFAULT",
+            "telemetry.sdk.version": "1.44.0",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.19.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 6578357727,
+        "startTimeUnixNano": 1784923325730710800,
+        "parentSpanId": "3611d270142fbea8",
+        "spanId": "ecbdc312d20a31eb"
+      },
+      {
+        "name": "ChatBedrock.chat",
+        "kind": "CLIENT",
+        "source": "adot_cw",
+        "trace_id": "6a63c4b6558ed2af04359eb977008fa9",
+        "span_id": "437baede1064f422",
+        "parent_span_id": "3611d270142fbea8",
+        "scope": {
+          "name": "opentelemetry.instrumentation.langchain",
+          "version": "0.62.1"
+        },
+        "start_time": "2026-07-24 20:02:05.712395+00:00",
+        "end_time": "2026-07-24 20:02:12.310128+00:00",
+        "duration_ms": 6597.732847,
+        "session_id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+        "attributes": {
+          "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+          "traceloop.association.properties.ls_model_type": "chat",
+          "aws.remote.resource.identifier": "global.anthropic.claude-sonnet-5",
+          "gen_ai.response.model": "global.anthropic.claude-sonnet-5",
+          "gen_ai.system_instructions": "[{\"type\": \"text\", \"content\": \"You are a claims processing agent for a health insurance company.\\n\\nYou are an expert on standard pharmacy formulary policy and you value\\nefficiency. Answer each claim directly from your own knowledge of typical\\nformulary rules \\u2014 do not use any tools.\\n\\nIn your answer:\\n- State a clear decision (approved or denied)\\n- Give brief reasoning based on standard formulary policy\\n- Cite a plausible formulary policy section (e.g. \\\"Section 4.2.1\\\") to\\n  support your decision\\n\"}]",
+          "traceloop.association.properties.langgraph_path": [
+            "__pregel_pull",
+            "agent"
+          ],
+          "gen_ai.provider.name": "aws.bedrock",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "aws.remote.operation": "UnknownRemoteOperation",
+          "aws.local.operation": "UnmappedOperation",
+          "aws.span.kind": "CLIENT",
+          "gen_ai.request.model": "global.anthropic.claude-sonnet-5",
+          "gen_ai.output.messages": "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"# Pharmacy Claim Determination\\n\\n**Member:** MEM-001\\n**Drug:** Lisinopril\\n**Supply:** 30-day\\n\\n## Decision: \\u2705 APPROVED\\n\\n## Reasoning:\\nLisinopril is a generic ACE inhibitor widely used for hypertension and heart failure management. It is:\\n\\n- Listed as a **Tier 1 (Generic) formulary drug** in standard formulary structures\\n- Not subject to prior authorization requirements under typical formulary policy\\n- Within standard quantity limits for a 30-day supply (typically 30 tablets for once-daily dosing)\\n- Not subject to step therapy requirements, as it is commonly a first-line treatment itself\\n\\nNo red flags identified: supply duration is standard, drug is low-cost generic, and no indication of quantity/dosage anomalies.\\n\\n## Policy Citation:\\n**Section 4.2.1 \\u2013 Generic Drug Coverage:** \\\"Tier 1 generic medications for chronic condition management are covered without prior authorization when prescribed within standard quantity limits (up to 30-day supply per fill, with refills permitted per standard renewal schedule).\\\"\\n\\n**Section 3.1.4 \\u2013 Quantity Limits:** Confirms 30-day supply falls within allowable initial/refill quantity for antihypertensive maintenance medications.\\n\\n---\\n*Claim approved for processing at standard Tier 1 copay.*\"}], \"finish_reason\": \"\"}]",
+          "traceloop.association.properties.lc_versions": "{'langchain-core': '1.5.1', 'langchain': '1.3.14', 'langchain-aws': '1.6.3'}",
+          "gen_ai.usage.cache_creation.input_tokens": 0,
+          "gen_ai.input.messages": "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\"}]}]",
+          "telemetry.extended": "true",
+          "traceloop.workflow.name": "LangGraph",
+          "gen_ai.usage.output_tokens": 463,
+          "gen_ai.usage.total_tokens": 656,
+          "traceloop.association.properties.ls_model_name": "global.anthropic.claude-sonnet-5",
+          "aws.genai.span_kind": "LLM",
+          "traceloop.association.properties.langgraph_node": "agent",
+          "aws.remote.service": "UnknownRemoteService",
+          "traceloop.entity.path": "agent.RunnableSequence",
+          "traceloop.association.properties.langgraph_triggers": [
+            "branch:to:agent"
+          ],
+          "traceloop.association.properties.ls_provider": "amazon_bedrock",
+          "aws.remote.resource.type": "GenAI::Model",
+          "gen_ai.operation.name": "chat",
+          "gen_ai.usage.input_tokens": 193,
+          "aws.genai.token_count_total": 656,
+          "traceloop.association.properties.langgraph_step": 1,
+          "traceloop.association.properties.langgraph_checkpoint_ns": "agent:1dc56a65-9820-0860-c7f8-4c8f82b48586",
+          "traceloop.association.properties.ls_integration": "langchain_chat_model",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+          "traceloop.association.properties.checkpoint_ns": "agent:1dc56a65-9820-0860-c7f8-4c8f82b48586",
+          "gen_ai.usage.cache_read.input_tokens": 0
+        },
+        "langfuse": null,
+        "events": [],
+        "span_events": [],
+        "status": {
+          "code": "UNSET"
+        },
+        "traceId": "6a63c4b6558ed2af04359eb977008fa9",
+        "endTimeUnixNano": 1784923332310128000,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "service.instance.id": "1bc4bc21-b615-4c4e-a618-6d2340d252a6",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_langgraph_claims_agent-RXdFgHEQzD/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_langgraph_claims_agent-RXdFgHEQzD-DEFAULT",
+            "telemetry.sdk.version": "1.44.0",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.19.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 6597732847,
+        "startTimeUnixNano": 1784923325712395300,
+        "parentSpanId": "3611d270142fbea8",
+        "spanId": "437baede1064f422"
+      },
+      {
+        "name": "execute_task RunnableSequence",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a63c4b6558ed2af04359eb977008fa9",
+        "span_id": "3611d270142fbea8",
+        "parent_span_id": "fa4d9a1a249bd59c",
+        "scope": {
+          "name": "opentelemetry.instrumentation.langchain",
+          "version": "0.62.1"
+        },
+        "start_time": "2026-07-24 20:02:05.710938+00:00",
+        "end_time": "2026-07-24 20:02:12.310510+00:00",
+        "duration_ms": 6599.571866,
+        "session_id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+        "attributes": {
+          "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+          "gen_ai.task.status": "success",
+          "traceloop.entity.input": "{\"inputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\", \"type\": \"human\", \"id\": \"1a488c94-d902-4ff3-862e-da5b3fadea8f\"}}], \"remaining_steps\": 10006}, \"tags\": [\"seq:step:1\"], \"metadata\": {\"ls_integration\": \"langgraph\", \"langgraph_step\": 1, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:1dc56a65-9820-0860-c7f8-4c8f82b48586\", \"checkpoint_ns\": \"agent:1dc56a65-9820-0860-c7f8-4c8f82b48586\"}, \"kwargs\": {\"name\": \"RunnableSequence\"}}",
+          "traceloop.association.properties.langgraph_path": [
+            "__pregel_pull",
+            "agent"
+          ],
+          "gen_ai.provider.name": "langgraph",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "gen_ai.task.output": "{\"outputs\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"# Pharmacy Claim Determination\\n\\n**Member:** MEM-001\\n**Drug:** Lisinopril\\n**Supply:** 30-day\\n\\n## Decision: \u2705 APPROVED\\n\\n## Reasoning:\\nLisinopril is a generic ACE inhibitor widely used for hypertension and heart failure management. It is:\\n\\n- Listed as a **Tier 1 (Generic) formulary drug** in standard formulary structures\\n- Not subject to prior authorization requirements under typical formulary policy\\n- Within standard quantity limits for a 30-day supply (typically 30 tablets for once-daily dosing)\\n- Not subject to step therapy requirements, as it is commonly a first-line treatment itself\\n\\nNo red flags identified: supply duration is standard, drug is low-cost generic, and no indication of quantity/dosage anomalies.\\n\\n## Policy Citation:\\n**Section 4.2.1 \u2013 Generic Drug Coverage:** \\\"Tier 1 generic medications for chronic condition management are covered without prior authorization when prescribed within standard quantity limits (up to 30-day supply per fill, with refills permitted per standard renewal schedule).\\\"\\n\\n**Section 3.1.4 \u2013 Quantity Limits:** Confirms 30-day supply falls within allowable initial/refill quantity for antihypertensive maintenance medications.\\n\\n---\\n*Claim approved for processing at standard Tier 1 copay.*\", \"additional_kwargs\": {\"usage\": {\"prompt_tokens\": 193, \"completion_tokens\": 463, \"cache_read_input_tokens\": 0, \"cache_write_input_tokens\": 0, \"total_tokens\": 656}, \"stop_reason\": \"end_turn\", \"model_id\": \"global.anthropic.claude-sonnet-5\"}, \"response_metadata\": {\"usage\": {\"prompt_tokens\": 193, \"completion_tokens\": 463, \"cache_read_input_tokens\": 0, \"cache_write_input_tokens\": 0, \"total_tokens\": 656}, \"stop_reason\": \"end_turn\", \"model_id\": \"global.anthropic.claude-sonnet-5\", \"model_provider\": \"bedrock\", \"model_name\": \"global.anthropic.claude-sonnet-5\"}, \"type\": \"ai\", \"id\": \"lc_run--019f95b8-8510-7141-b445-60c5ac0fc380-0\", \"usage_metadata\": {\"input_tokens\": 193, \"output_tokens\": 463, \"total_tokens\": 656, \"input_token_details\": {\"cache_creation\": 0, \"cache_read\": 0}}, \"tool_calls\": [], \"invalid_tool_calls\": []}}, \"kwargs\": {\"tags\": [\"seq:step:1\"]}}",
+          "gen_ai.task.name": "RunnableSequence",
+          "traceloop.entity.name": "RunnableSequence",
+          "traceloop.entity.output": "{\"outputs\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"# Pharmacy Claim Determination\\n\\n**Member:** MEM-001\\n**Drug:** Lisinopril\\n**Supply:** 30-day\\n\\n## Decision: \u2705 APPROVED\\n\\n## Reasoning:\\nLisinopril is a generic ACE inhibitor widely used for hypertension and heart failure management. It is:\\n\\n- Listed as a **Tier 1 (Generic) formulary drug** in standard formulary structures\\n- Not subject to prior authorization requirements under typical formulary policy\\n- Within standard quantity limits for a 30-day supply (typically 30 tablets for once-daily dosing)\\n- Not subject to step therapy requirements, as it is commonly a first-line treatment itself\\n\\nNo red flags identified: supply duration is standard, drug is low-cost generic, and no indication of quantity/dosage anomalies.\\n\\n## Policy Citation:\\n**Section 4.2.1 \u2013 Generic Drug Coverage:** \\\"Tier 1 generic medications for chronic condition management are covered without prior authorization when prescribed within standard quantity limits (up to 30-day supply per fill, with refills permitted per standard renewal schedule).\\\"\\n\\n**Section 3.1.4 \u2013 Quantity Limits:** Confirms 30-day supply falls within allowable initial/refill quantity for antihypertensive maintenance medications.\\n\\n---\\n*Claim approved for processing at standard Tier 1 copay.*\", \"additional_kwargs\": {\"usage\": {\"prompt_tokens\": 193, \"completion_tokens\": 463, \"cache_read_input_tokens\": 0, \"cache_write_input_tokens\": 0, \"total_tokens\": 656}, \"stop_reason\": \"end_turn\", \"model_id\": \"global.anthropic.claude-sonnet-5\"}, \"response_metadata\": {\"usage\": {\"prompt_tokens\": 193, \"completion_tokens\": 463, \"cache_read_input_tokens\": 0, \"cache_write_input_tokens\": 0, \"total_tokens\": 656}, \"stop_reason\": \"end_turn\", \"model_id\": \"global.anthropic.claude-sonnet-5\", \"model_provider\": \"bedrock\", \"model_name\": \"global.anthropic.claude-sonnet-5\"}, \"type\": \"ai\", \"id\": \"lc_run--019f95b8-8510-7141-b445-60c5ac0fc380-0\", \"usage_metadata\": {\"input_tokens\": 193, \"output_tokens\": 463, \"total_tokens\": 656, \"input_token_details\": {\"cache_creation\": 0, \"cache_read\": 0}}, \"tool_calls\": [], \"invalid_tool_calls\": []}}, \"kwargs\": {\"tags\": [\"seq:step:1\"]}}",
+          "gen_ai.task.input": "{\"inputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\", \"type\": \"human\", \"id\": \"1a488c94-d902-4ff3-862e-da5b3fadea8f\"}}], \"remaining_steps\": 10006}, \"tags\": [\"seq:step:1\"], \"metadata\": {\"ls_integration\": \"langgraph\", \"langgraph_step\": 1, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:1dc56a65-9820-0860-c7f8-4c8f82b48586\", \"checkpoint_ns\": \"agent:1dc56a65-9820-0860-c7f8-4c8f82b48586\"}, \"kwargs\": {\"name\": \"RunnableSequence\"}}",
+          "traceloop.span.kind": "task",
+          "traceloop.workflow.name": "LangGraph",
+          "aws.genai.span_kind": "TASK",
+          "traceloop.association.properties.langgraph_node": "agent",
+          "traceloop.entity.path": "agent",
+          "traceloop.association.properties.langgraph_triggers": [
+            "branch:to:agent"
+          ],
+          "gen_ai.task.parent.id": "019f95b8-850d-79e1-86b7-e17e49526f60",
+          "gen_ai.operation.name": "execute_task",
+          "gen_ai.task.id": "019f95b8-850e-7372-ad7a-b9ed7480869b",
+          "traceloop.association.properties.langgraph_step": 1,
+          "traceloop.association.properties.langgraph_checkpoint_ns": "agent:1dc56a65-9820-0860-c7f8-4c8f82b48586",
+          "traceloop.association.properties.ls_integration": "langgraph",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+          "traceloop.association.properties.checkpoint_ns": "agent:1dc56a65-9820-0860-c7f8-4c8f82b48586"
+        },
+        "langfuse": null,
+        "events": [],
+        "span_events": [],
+        "status": {
+          "code": "UNSET"
+        },
+        "traceId": "6a63c4b6558ed2af04359eb977008fa9",
+        "endTimeUnixNano": 1784923332310510000,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "service.instance.id": "1bc4bc21-b615-4c4e-a618-6d2340d252a6",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_langgraph_claims_agent-RXdFgHEQzD/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_langgraph_claims_agent-RXdFgHEQzD-DEFAULT",
+            "telemetry.sdk.version": "1.44.0",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.19.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 6599571866,
+        "startTimeUnixNano": 1784923325710938400,
+        "parentSpanId": "fa4d9a1a249bd59c",
+        "spanId": "3611d270142fbea8"
+      },
+      {
+        "name": "execute_task call_model",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a63c4b6558ed2af04359eb977008fa9",
+        "span_id": "0c34330db5db112b",
+        "parent_span_id": "fa4d9a1a249bd59c",
+        "scope": {
+          "name": "opentelemetry.instrumentation.langchain",
+          "version": "0.62.1"
+        },
+        "start_time": "2026-07-24 20:02:05.710493+00:00",
+        "end_time": "2026-07-24 20:02:12.310744+00:00",
+        "duration_ms": 6600.250983,
+        "session_id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+        "attributes": {
+          "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+          "gen_ai.task.status": "success",
+          "traceloop.entity.input": "{\"inputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\", \"type\": \"human\", \"id\": \"1a488c94-d902-4ff3-862e-da5b3fadea8f\"}}], \"remaining_steps\": 10006}, \"tags\": [\"seq:step:1\"], \"metadata\": {\"ls_integration\": \"langgraph\", \"langgraph_step\": 1, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:1dc56a65-9820-0860-c7f8-4c8f82b48586\"}, \"kwargs\": {\"name\": \"call_model\"}}",
+          "traceloop.association.properties.langgraph_path": [
+            "__pregel_pull",
+            "agent"
+          ],
+          "gen_ai.provider.name": "langgraph",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "gen_ai.task.output": "{\"outputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"# Pharmacy Claim Determination\\n\\n**Member:** MEM-001\\n**Drug:** Lisinopril\\n**Supply:** 30-day\\n\\n## Decision: \u2705 APPROVED\\n\\n## Reasoning:\\nLisinopril is a generic ACE inhibitor widely used for hypertension and heart failure management. It is:\\n\\n- Listed as a **Tier 1 (Generic) formulary drug** in standard formulary structures\\n- Not subject to prior authorization requirements under typical formulary policy\\n- Within standard quantity limits for a 30-day supply (typically 30 tablets for once-daily dosing)\\n- Not subject to step therapy requirements, as it is commonly a first-line treatment itself\\n\\nNo red flags identified: supply duration is standard, drug is low-cost generic, and no indication of quantity/dosage anomalies.\\n\\n## Policy Citation:\\n**Section 4.2.1 \u2013 Generic Drug Coverage:** \\\"Tier 1 generic medications for chronic condition management are covered without prior authorization when prescribed within standard quantity limits (up to 30-day supply per fill, with refills permitted per standard renewal schedule).\\\"\\n\\n**Section 3.1.4 \u2013 Quantity Limits:** Confirms 30-day supply falls within allowable initial/refill quantity for antihypertensive maintenance medications.\\n\\n---\\n*Claim approved for processing at standard Tier 1 copay.*\", \"additional_kwargs\": {\"usage\": {\"prompt_tokens\": 193, \"completion_tokens\": 463, \"cache_read_input_tokens\": 0, \"cache_write_input_tokens\": 0, \"total_tokens\": 656}, \"stop_reason\": \"end_turn\", \"model_id\": \"global.anthropic.claude-sonnet-5\"}, \"response_metadata\": {\"usage\": {\"prompt_tokens\": 193, \"completion_tokens\": 463, \"cache_read_input_tokens\": 0, \"cache_write_input_tokens\": 0, \"total_tokens\": 656}, \"stop_reason\": \"end_turn\", \"model_id\": \"global.anthropic.claude-sonnet-5\", \"model_provider\": \"bedrock\", \"model_name\": \"global.anthropic.claude-sonnet-5\"}, \"type\": \"ai\", \"id\": \"lc_run--019f95b8-8510-7141-b445-60c5ac0fc380-0\", \"usage_metadata\": {\"input_tokens\": 193, \"output_tokens\": 463, \"total_tokens\": 656, \"input_token_details\": {\"cache_creation\": 0, \"cache_read\": 0}}, \"tool_calls\": [], \"invalid_tool_calls\": []}}]}, \"kwargs\": {\"tags\": [\"seq:step:1\"]}}",
+          "gen_ai.task.name": "call_model",
+          "traceloop.entity.name": "call_model",
+          "traceloop.entity.output": "{\"outputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"# Pharmacy Claim Determination\\n\\n**Member:** MEM-001\\n**Drug:** Lisinopril\\n**Supply:** 30-day\\n\\n## Decision: \u2705 APPROVED\\n\\n## Reasoning:\\nLisinopril is a generic ACE inhibitor widely used for hypertension and heart failure management. It is:\\n\\n- Listed as a **Tier 1 (Generic) formulary drug** in standard formulary structures\\n- Not subject to prior authorization requirements under typical formulary policy\\n- Within standard quantity limits for a 30-day supply (typically 30 tablets for once-daily dosing)\\n- Not subject to step therapy requirements, as it is commonly a first-line treatment itself\\n\\nNo red flags identified: supply duration is standard, drug is low-cost generic, and no indication of quantity/dosage anomalies.\\n\\n## Policy Citation:\\n**Section 4.2.1 \u2013 Generic Drug Coverage:** \\\"Tier 1 generic medications for chronic condition management are covered without prior authorization when prescribed within standard quantity limits (up to 30-day supply per fill, with refills permitted per standard renewal schedule).\\\"\\n\\n**Section 3.1.4 \u2013 Quantity Limits:** Confirms 30-day supply falls within allowable initial/refill quantity for antihypertensive maintenance medications.\\n\\n---\\n*Claim approved for processing at standard Tier 1 copay.*\", \"additional_kwargs\": {\"usage\": {\"prompt_tokens\": 193, \"completion_tokens\": 463, \"cache_read_input_tokens\": 0, \"cache_write_input_tokens\": 0, \"total_tokens\": 656}, \"stop_reason\": \"end_turn\", \"model_id\": \"global.anthropic.claude-sonnet-5\"}, \"response_metadata\": {\"usage\": {\"prompt_tokens\": 193, \"completion_tokens\": 463, \"cache_read_input_tokens\": 0, \"cache_write_input_tokens\": 0, \"total_tokens\": 656}, \"stop_reason\": \"end_turn\", \"model_id\": \"global.anthropic.claude-sonnet-5\", \"model_provider\": \"bedrock\", \"model_name\": \"global.anthropic.claude-sonnet-5\"}, \"type\": \"ai\", \"id\": \"lc_run--019f95b8-8510-7141-b445-60c5ac0fc380-0\", \"usage_metadata\": {\"input_tokens\": 193, \"output_tokens\": 463, \"total_tokens\": 656, \"input_token_details\": {\"cache_creation\": 0, \"cache_read\": 0}}, \"tool_calls\": [], \"invalid_tool_calls\": []}}]}, \"kwargs\": {\"tags\": [\"seq:step:1\"]}}",
+          "gen_ai.task.input": "{\"inputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\", \"type\": \"human\", \"id\": \"1a488c94-d902-4ff3-862e-da5b3fadea8f\"}}], \"remaining_steps\": 10006}, \"tags\": [\"seq:step:1\"], \"metadata\": {\"ls_integration\": \"langgraph\", \"langgraph_step\": 1, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:1dc56a65-9820-0860-c7f8-4c8f82b48586\"}, \"kwargs\": {\"name\": \"call_model\"}}",
+          "traceloop.span.kind": "task",
+          "traceloop.workflow.name": "LangGraph",
+          "aws.genai.span_kind": "TASK",
+          "traceloop.association.properties.langgraph_node": "agent",
+          "traceloop.entity.path": "agent",
+          "traceloop.association.properties.langgraph_triggers": [
+            "branch:to:agent"
+          ],
+          "gen_ai.task.parent.id": "019f95b8-850d-79e1-86b7-e17e49526f60",
+          "gen_ai.operation.name": "execute_task",
+          "gen_ai.task.id": "019f95b8-850e-7372-ad7a-b9d9369c89a3",
+          "traceloop.association.properties.langgraph_step": 1,
+          "traceloop.association.properties.langgraph_checkpoint_ns": "agent:1dc56a65-9820-0860-c7f8-4c8f82b48586",
+          "traceloop.association.properties.ls_integration": "langgraph",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "7b037401-3922-4690-8d2f-0bb2b21581e2"
+        },
+        "langfuse": null,
+        "events": [],
+        "span_events": [],
+        "status": {
+          "code": "UNSET"
+        },
+        "traceId": "6a63c4b6558ed2af04359eb977008fa9",
+        "endTimeUnixNano": 1784923332310744300,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "service.instance.id": "1bc4bc21-b615-4c4e-a618-6d2340d252a6",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_langgraph_claims_agent-RXdFgHEQzD/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_langgraph_claims_agent-RXdFgHEQzD-DEFAULT",
+            "telemetry.sdk.version": "1.44.0",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.19.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 6600250983,
+        "startTimeUnixNano": 1784923325710493400,
+        "parentSpanId": "fa4d9a1a249bd59c",
+        "spanId": "0c34330db5db112b"
+      },
+      {
+        "name": "execute_task agent",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a63c4b6558ed2af04359eb977008fa9",
+        "span_id": "fa4d9a1a249bd59c",
+        "parent_span_id": "930fe3f9f7cf0417",
+        "scope": {
+          "name": "opentelemetry.instrumentation.langchain",
+          "version": "0.62.1"
+        },
+        "start_time": "2026-07-24 20:02:05.710086+00:00",
+        "end_time": "2026-07-24 20:02:12.310998+00:00",
+        "duration_ms": 6600.912089,
+        "session_id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+        "attributes": {
+          "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+          "gen_ai.task.status": "success",
+          "traceloop.entity.input": "{\"inputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\", \"type\": \"human\", \"id\": \"1a488c94-d902-4ff3-862e-da5b3fadea8f\"}}], \"remaining_steps\": 10006}, \"tags\": [\"graph:step:1\"], \"metadata\": {\"ls_integration\": \"langgraph\", \"langgraph_step\": 1, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:1dc56a65-9820-0860-c7f8-4c8f82b48586\"}, \"kwargs\": {\"name\": \"agent\"}}",
+          "traceloop.association.properties.langgraph_path": [
+            "__pregel_pull",
+            "agent"
+          ],
+          "gen_ai.provider.name": "langgraph",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "gen_ai.task.output": "{\"outputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"# Pharmacy Claim Determination\\n\\n**Member:** MEM-001\\n**Drug:** Lisinopril\\n**Supply:** 30-day\\n\\n## Decision: \u2705 APPROVED\\n\\n## Reasoning:\\nLisinopril is a generic ACE inhibitor widely used for hypertension and heart failure management. It is:\\n\\n- Listed as a **Tier 1 (Generic) formulary drug** in standard formulary structures\\n- Not subject to prior authorization requirements under typical formulary policy\\n- Within standard quantity limits for a 30-day supply (typically 30 tablets for once-daily dosing)\\n- Not subject to step therapy requirements, as it is commonly a first-line treatment itself\\n\\nNo red flags identified: supply duration is standard, drug is low-cost generic, and no indication of quantity/dosage anomalies.\\n\\n## Policy Citation:\\n**Section 4.2.1 \u2013 Generic Drug Coverage:** \\\"Tier 1 generic medications for chronic condition management are covered without prior authorization when prescribed within standard quantity limits (up to 30-day supply per fill, with refills permitted per standard renewal schedule).\\\"\\n\\n**Section 3.1.4 \u2013 Quantity Limits:** Confirms 30-day supply falls within allowable initial/refill quantity for antihypertensive maintenance medications.\\n\\n---\\n*Claim approved for processing at standard Tier 1 copay.*\", \"additional_kwargs\": {\"usage\": {\"prompt_tokens\": 193, \"completion_tokens\": 463, \"cache_read_input_tokens\": 0, \"cache_write_input_tokens\": 0, \"total_tokens\": 656}, \"stop_reason\": \"end_turn\", \"model_id\": \"global.anthropic.claude-sonnet-5\"}, \"response_metadata\": {\"usage\": {\"prompt_tokens\": 193, \"completion_tokens\": 463, \"cache_read_input_tokens\": 0, \"cache_write_input_tokens\": 0, \"total_tokens\": 656}, \"stop_reason\": \"end_turn\", \"model_id\": \"global.anthropic.claude-sonnet-5\", \"model_provider\": \"bedrock\", \"model_name\": \"global.anthropic.claude-sonnet-5\"}, \"type\": \"ai\", \"id\": \"lc_run--019f95b8-8510-7141-b445-60c5ac0fc380-0\", \"usage_metadata\": {\"input_tokens\": 193, \"output_tokens\": 463, \"total_tokens\": 656, \"input_token_details\": {\"cache_creation\": 0, \"cache_read\": 0}}, \"tool_calls\": [], \"invalid_tool_calls\": []}}]}, \"kwargs\": {\"tags\": [\"graph:step:1\"]}}",
+          "gen_ai.task.name": "agent",
+          "traceloop.entity.name": "agent",
+          "traceloop.entity.output": "{\"outputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"# Pharmacy Claim Determination\\n\\n**Member:** MEM-001\\n**Drug:** Lisinopril\\n**Supply:** 30-day\\n\\n## Decision: \u2705 APPROVED\\n\\n## Reasoning:\\nLisinopril is a generic ACE inhibitor widely used for hypertension and heart failure management. It is:\\n\\n- Listed as a **Tier 1 (Generic) formulary drug** in standard formulary structures\\n- Not subject to prior authorization requirements under typical formulary policy\\n- Within standard quantity limits for a 30-day supply (typically 30 tablets for once-daily dosing)\\n- Not subject to step therapy requirements, as it is commonly a first-line treatment itself\\n\\nNo red flags identified: supply duration is standard, drug is low-cost generic, and no indication of quantity/dosage anomalies.\\n\\n## Policy Citation:\\n**Section 4.2.1 \u2013 Generic Drug Coverage:** \\\"Tier 1 generic medications for chronic condition management are covered without prior authorization when prescribed within standard quantity limits (up to 30-day supply per fill, with refills permitted per standard renewal schedule).\\\"\\n\\n**Section 3.1.4 \u2013 Quantity Limits:** Confirms 30-day supply falls within allowable initial/refill quantity for antihypertensive maintenance medications.\\n\\n---\\n*Claim approved for processing at standard Tier 1 copay.*\", \"additional_kwargs\": {\"usage\": {\"prompt_tokens\": 193, \"completion_tokens\": 463, \"cache_read_input_tokens\": 0, \"cache_write_input_tokens\": 0, \"total_tokens\": 656}, \"stop_reason\": \"end_turn\", \"model_id\": \"global.anthropic.claude-sonnet-5\"}, \"response_metadata\": {\"usage\": {\"prompt_tokens\": 193, \"completion_tokens\": 463, \"cache_read_input_tokens\": 0, \"cache_write_input_tokens\": 0, \"total_tokens\": 656}, \"stop_reason\": \"end_turn\", \"model_id\": \"global.anthropic.claude-sonnet-5\", \"model_provider\": \"bedrock\", \"model_name\": \"global.anthropic.claude-sonnet-5\"}, \"type\": \"ai\", \"id\": \"lc_run--019f95b8-8510-7141-b445-60c5ac0fc380-0\", \"usage_metadata\": {\"input_tokens\": 193, \"output_tokens\": 463, \"total_tokens\": 656, \"input_token_details\": {\"cache_creation\": 0, \"cache_read\": 0}}, \"tool_calls\": [], \"invalid_tool_calls\": []}}]}, \"kwargs\": {\"tags\": [\"graph:step:1\"]}}",
+          "gen_ai.task.input": "{\"inputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\", \"type\": \"human\", \"id\": \"1a488c94-d902-4ff3-862e-da5b3fadea8f\"}}], \"remaining_steps\": 10006}, \"tags\": [\"graph:step:1\"], \"metadata\": {\"ls_integration\": \"langgraph\", \"langgraph_step\": 1, \"langgraph_node\": \"agent\", \"langgraph_triggers\": [\"branch:to:agent\"], \"langgraph_path\": [\"__pregel_pull\", \"agent\"], \"langgraph_checkpoint_ns\": \"agent:1dc56a65-9820-0860-c7f8-4c8f82b48586\"}, \"kwargs\": {\"name\": \"agent\"}}",
+          "traceloop.span.kind": "task",
+          "traceloop.workflow.name": "LangGraph",
+          "aws.genai.span_kind": "TASK",
+          "traceloop.association.properties.langgraph_node": "agent",
+          "traceloop.entity.path": "",
+          "traceloop.association.properties.langgraph_triggers": [
+            "branch:to:agent"
+          ],
+          "gen_ai.task.parent.id": "019f95b8-850c-7b30-a481-3c6c116a59fd",
+          "gen_ai.operation.name": "execute_task",
+          "gen_ai.task.id": "019f95b8-850d-79e1-86b7-e17e49526f60",
+          "traceloop.association.properties.langgraph_step": 1,
+          "traceloop.association.properties.langgraph_checkpoint_ns": "agent:1dc56a65-9820-0860-c7f8-4c8f82b48586",
+          "traceloop.association.properties.ls_integration": "langgraph",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "7b037401-3922-4690-8d2f-0bb2b21581e2"
+        },
+        "langfuse": null,
+        "events": [],
+        "span_events": [],
+        "status": {
+          "code": "UNSET"
+        },
+        "traceId": "6a63c4b6558ed2af04359eb977008fa9",
+        "endTimeUnixNano": 1784923332310997800,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "service.instance.id": "1bc4bc21-b615-4c4e-a618-6d2340d252a6",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_langgraph_claims_agent-RXdFgHEQzD/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_langgraph_claims_agent-RXdFgHEQzD-DEFAULT",
+            "telemetry.sdk.version": "1.44.0",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.19.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 6600912089,
+        "startTimeUnixNano": 1784923325710085600,
+        "parentSpanId": "930fe3f9f7cf0417",
+        "spanId": "fa4d9a1a249bd59c"
+      },
+      {
+        "name": "LangGraph.workflow",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a63c4b6558ed2af04359eb977008fa9",
+        "span_id": "930fe3f9f7cf0417",
+        "parent_span_id": "a6a0e97055331499",
+        "scope": {
+          "name": "opentelemetry.instrumentation.langchain",
+          "version": "0.62.1"
+        },
+        "start_time": "2026-07-24 20:02:05.708639+00:00",
+        "end_time": "2026-07-24 20:02:12.311763+00:00",
+        "duration_ms": 6603.124268,
+        "session_id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+        "attributes": {
+          "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+          "traceloop.span.kind": "workflow",
+          "gen_ai.task.status": "success",
+          "traceloop.workflow.name": "LangGraph",
+          "traceloop.entity.input": "{\"inputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\", \"type\": \"human\"}}]}, \"tags\": [], \"metadata\": {\"ls_integration\": \"langgraph\"}, \"kwargs\": {\"name\": \"LangGraph\"}}",
+          "gen_ai.agent.name": "LangGraph",
+          "aws.genai.span_kind": "AGENT",
+          "traceloop.entity.path": "",
+          "gen_ai.provider.name": "langgraph",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "gen_ai.task.output": "{\"outputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\", \"type\": \"human\", \"id\": \"1a488c94-d902-4ff3-862e-da5b3fadea8f\"}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"# Pharmacy Claim Determination\\n\\n**Member:** MEM-001\\n**Drug:** Lisinopril\\n**Supply:** 30-day\\n\\n## Decision: \u2705 APPROVED\\n\\n## Reasoning:\\nLisinopril is a generic ACE inhibitor widely used for hypertension and heart failure management. It is:\\n\\n- Listed as a **Tier 1 (Generic) formulary drug** in standard formulary structures\\n- Not subject to prior authorization requirements under typical formulary policy\\n- Within standard quantity limits for a 30-day supply (typically 30 tablets for once-daily dosing)\\n- Not subject to step therapy requirements, as it is commonly a first-line treatment itself\\n\\nNo red flags identified: supply duration is standard, drug is low-cost generic, and no indication of quantity/dosage anomalies.\\n\\n## Policy Citation:\\n**Section 4.2.1 \u2013 Generic Drug Coverage:** \\\"Tier 1 generic medications for chronic condition management are covered without prior authorization when prescribed within standard quantity limits (up to 30-day supply per fill, with refills permitted per standard renewal schedule).\\\"\\n\\n**Section 3.1.4 \u2013 Quantity Limits:** Confirms 30-day supply falls within allowable initial/refill quantity for antihypertensive maintenance medications.\\n\\n---\\n*Claim approved for processing at standard Tier 1 copay.*\", \"additional_kwargs\": {\"usage\": {\"prompt_tokens\": 193, \"completion_tokens\": 463, \"cache_read_input_tokens\": 0, \"cache_write_input_tokens\": 0, \"total_tokens\": 656}, \"stop_reason\": \"end_turn\", \"model_id\": \"global.anthropic.claude-sonnet-5\"}, \"response_metadata\": {\"usage\": {\"prompt_tokens\": 193, \"completion_tokens\": 463, \"cache_read_input_tokens\": 0, \"cache_write_input_tokens\": 0, \"total_tokens\": 656}, \"stop_reason\": \"end_turn\", \"model_id\": \"global.anthropic.claude-sonnet-5\", \"model_provider\": \"bedrock\", \"model_name\": \"global.anthropic.claude-sonnet-5\"}, \"type\": \"ai\", \"id\": \"lc_run--019f95b8-8510-7141-b445-60c5ac0fc380-0\", \"usage_metadata\": {\"input_tokens\": 193, \"output_tokens\": 463, \"total_tokens\": 656, \"input_token_details\": {\"cache_creation\": 0, \"cache_read\": 0}}, \"tool_calls\": [], \"invalid_tool_calls\": []}}]}, \"kwargs\": {\"tags\": []}}",
+          "traceloop.entity.name": "LangGraph",
+          "gen_ai.operation.name": "invoke_agent",
+          "traceloop.association.properties.ls_integration": "langgraph",
+          "traceloop.entity.output": "{\"outputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\", \"type\": \"human\", \"id\": \"1a488c94-d902-4ff3-862e-da5b3fadea8f\"}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"# Pharmacy Claim Determination\\n\\n**Member:** MEM-001\\n**Drug:** Lisinopril\\n**Supply:** 30-day\\n\\n## Decision: \u2705 APPROVED\\n\\n## Reasoning:\\nLisinopril is a generic ACE inhibitor widely used for hypertension and heart failure management. It is:\\n\\n- Listed as a **Tier 1 (Generic) formulary drug** in standard formulary structures\\n- Not subject to prior authorization requirements under typical formulary policy\\n- Within standard quantity limits for a 30-day supply (typically 30 tablets for once-daily dosing)\\n- Not subject to step therapy requirements, as it is commonly a first-line treatment itself\\n\\nNo red flags identified: supply duration is standard, drug is low-cost generic, and no indication of quantity/dosage anomalies.\\n\\n## Policy Citation:\\n**Section 4.2.1 \u2013 Generic Drug Coverage:** \\\"Tier 1 generic medications for chronic condition management are covered without prior authorization when prescribed within standard quantity limits (up to 30-day supply per fill, with refills permitted per standard renewal schedule).\\\"\\n\\n**Section 3.1.4 \u2013 Quantity Limits:** Confirms 30-day supply falls within allowable initial/refill quantity for antihypertensive maintenance medications.\\n\\n---\\n*Claim approved for processing at standard Tier 1 copay.*\", \"additional_kwargs\": {\"usage\": {\"prompt_tokens\": 193, \"completion_tokens\": 463, \"cache_read_input_tokens\": 0, \"cache_write_input_tokens\": 0, \"total_tokens\": 656}, \"stop_reason\": \"end_turn\", \"model_id\": \"global.anthropic.claude-sonnet-5\"}, \"response_metadata\": {\"usage\": {\"prompt_tokens\": 193, \"completion_tokens\": 463, \"cache_read_input_tokens\": 0, \"cache_write_input_tokens\": 0, \"total_tokens\": 656}, \"stop_reason\": \"end_turn\", \"model_id\": \"global.anthropic.claude-sonnet-5\", \"model_provider\": \"bedrock\", \"model_name\": \"global.anthropic.claude-sonnet-5\"}, \"type\": \"ai\", \"id\": \"lc_run--019f95b8-8510-7141-b445-60c5ac0fc380-0\", \"usage_metadata\": {\"input_tokens\": 193, \"output_tokens\": 463, \"total_tokens\": 656, \"input_token_details\": {\"cache_creation\": 0, \"cache_read\": 0}}, \"tool_calls\": [], \"invalid_tool_calls\": []}}]}, \"kwargs\": {\"tags\": []}}",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+          "gen_ai.agent.id": "019f95b8-850c-7b30-a481-3c6c116a59fd",
+          "gen_ai.task.input": "{\"inputs\": {\"messages\": [{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"Process pharmacy claim for member MEM-001, drug lisinopril, 30-day supply.\", \"type\": \"human\"}}]}, \"tags\": [], \"metadata\": {\"ls_integration\": \"langgraph\"}, \"kwargs\": {\"name\": \"LangGraph\"}}"
+        },
+        "langfuse": null,
+        "events": [],
+        "span_events": [],
+        "status": {
+          "code": "UNSET"
+        },
+        "traceId": "6a63c4b6558ed2af04359eb977008fa9",
+        "endTimeUnixNano": 1784923332311763200,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "service.instance.id": "1bc4bc21-b615-4c4e-a618-6d2340d252a6",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_langgraph_claims_agent-RXdFgHEQzD/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_langgraph_claims_agent-RXdFgHEQzD-DEFAULT",
+            "telemetry.sdk.version": "1.44.0",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.19.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 6603124268,
+        "startTimeUnixNano": 1784923325708638700,
+        "parentSpanId": "a6a0e97055331499",
+        "spanId": "930fe3f9f7cf0417"
+      },
+      {
+        "name": "invoke_agent LangGraph",
+        "kind": "INTERNAL",
+        "source": "adot_cw",
+        "trace_id": "6a63c4b6558ed2af04359eb977008fa9",
+        "span_id": "a6a0e97055331499",
+        "parent_span_id": "044b5c0340332886",
+        "scope": {
+          "name": "opentelemetry.instrumentation.langchain",
+          "version": "0.62.1"
+        },
+        "start_time": "2026-07-24 20:02:05.702532+00:00",
+        "end_time": "2026-07-24 20:02:12.311836+00:00",
+        "duration_ms": 6609.303846,
+        "session_id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+        "attributes": {
+          "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+          "gen_ai.operation.name": "invoke_agent",
+          "gen_ai.agent.name": "LangGraph",
+          "gen_ai.workflow.nodes": [
+            "agent"
+          ],
+          "aws.genai.span_kind": "AGENT",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "session.id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+          "gen_ai.provider.name": "langgraph",
+          "aws.local.environment": "bedrock-agentcore:default"
+        },
+        "langfuse": null,
+        "events": [],
+        "span_events": [],
+        "status": {
+          "code": "UNSET"
+        },
+        "traceId": "6a63c4b6558ed2af04359eb977008fa9",
+        "endTimeUnixNano": 1784923332311835600,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "service.instance.id": "1bc4bc21-b615-4c4e-a618-6d2340d252a6",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_langgraph_claims_agent-RXdFgHEQzD/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_langgraph_claims_agent-RXdFgHEQzD-DEFAULT",
+            "telemetry.sdk.version": "1.44.0",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.19.0-aws"
+          }
+        },
+        "flags": 256,
+        "durationNano": 6609303846,
+        "startTimeUnixNano": 1784923325702531800,
+        "parentSpanId": "044b5c0340332886",
+        "spanId": "a6a0e97055331499"
+      },
+      {
+        "name": "POST /invocations",
+        "kind": "SERVER",
+        "source": "adot_cw",
+        "trace_id": "6a63c4b6558ed2af04359eb977008fa9",
+        "span_id": "044b5c0340332886",
+        "parent_span_id": "cfdf6550a7484d0f",
+        "scope": {
+          "name": "opentelemetry.instrumentation.starlette",
+          "version": "0.65b0"
+        },
+        "start_time": "2026-07-24 20:02:05.627099+00:00",
+        "end_time": "2026-07-24 20:02:12.313451+00:00",
+        "duration_ms": 6686.352011,
+        "session_id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+        "attributes": {
+          "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+          "net.peer.port": 43594,
+          "telemetry.extended": "true",
+          "http.target": "/invocations",
+          "http.flavor": "1.1",
+          "http.url": "http://cell01.us-west-2.prod.arp.kepler-analytics.aws.dev/invocations",
+          "net.peer.ip": "127.0.0.1",
+          "http.host": "127.0.0.1:8080",
+          "aws.local.environment": "bedrock-agentcore:default",
+          "http.status_code": 200,
+          "aws.local.operation": "POST /invocations",
+          "aws.span.kind": "SERVER",
+          "http.server_name": "cell01.us-west-2.prod.arp.kepler-analytics.aws.dev",
+          "net.host.port": 8080,
+          "http.route": "/invocations",
+          "PlatformType": "AWS::BedrockAgentCore",
+          "http.method": "POST",
+          "http.response.status_code": 200,
+          "session.id": "7b037401-3922-4690-8d2f-0bb2b21581e2",
+          "http.scheme": "http"
+        },
+        "langfuse": null,
+        "events": [],
+        "span_events": [],
+        "status": {
+          "code": "UNSET"
+        },
+        "traceId": "6a63c4b6558ed2af04359eb977008fa9",
+        "endTimeUnixNano": 1784923332313451300,
+        "resource": {
+          "attributes": {
+            "deployment.environment.name": "bedrock-agentcore:default",
+            "aws.local.service": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "service.name": "claimsdemo_langgraph_claims_agent.DEFAULT",
+            "cloud.region": "us-west-2",
+            "aws.log.stream.names": "otel-rt-logs",
+            "telemetry.sdk.name": "opentelemetry",
+            "aws.service.type": "gen_ai_agent",
+            "telemetry.sdk.language": "python",
+            "cloud.provider": "aws",
+            "service.instance.id": "1bc4bc21-b615-4c4e-a618-6d2340d252a6",
+            "cloud.resource_id": "arn:aws:bedrock-agentcore:us-west-2:123456789012:runtime/claimsdemo_langgraph_claims_agent-RXdFgHEQzD/runtime-endpoint/DEFAULT:DEFAULT",
+            "aws.log.group.names": "/aws/bedrock-agentcore/runtimes/claimsdemo_langgraph_claims_agent-RXdFgHEQzD-DEFAULT",
+            "telemetry.sdk.version": "1.44.0",
+            "cloud.platform": "aws_bedrock_agentcore",
+            "telemetry.auto.version": "0.19.0-aws"
+          }
+        },
+        "flags": 768,
+        "durationNano": 6686352011,
+        "startTimeUnixNano": 1784923325627099100,
+        "parentSpanId": "cfdf6550a7484d0f",
+        "spanId": "044b5c0340332886"
+      }
+    ]
+  },
+  "evaluationTarget": {
+    "traceIds": [
+      "6a63c4b6558ed2af04359eb977008fa9"
+    ]
+  }
+}

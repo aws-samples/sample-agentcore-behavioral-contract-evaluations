@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Build artifacts
+evaluator/build/
+*.zip
+
+# AgentCore CLI / CDK
+.agentcore/
+cdk.out/
+node_modules/
+
+# Local env
+.env
+.DS_Store
+
+# Captured outputs (keep fixtures, ignore raw dumps)
+scripts/out/

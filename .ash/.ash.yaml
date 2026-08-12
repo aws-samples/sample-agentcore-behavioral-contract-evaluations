@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/awslabs/automated-security-helper/refs/heads/main/automated_security_helper/schemas/AshConfig.json
+project_name: sample-agentcore-behavioral-contract-evaluations
+global_settings:
+  severity_threshold: MEDIUM
+  suppressions:
+    - rule_id: SECRET-HEX-HIGH-ENTROPY-STRING
+      path: "**/tests/fixtures/*.json"
+      reason: >-
+        Captured Amazon Bedrock AgentCore Evaluations payloads used as offline
+        test fixtures. The flagged high-entropy strings are OpenTelemetry
+        trace/span identifiers and synthetic demo content. Account identifiers
+        are placeholders (123456789012) and credential attributes are REDACTED.
+    - rule_id: SECRET-BASE64-HIGH-ENTROPY-STRING
+      path: "**/tests/fixtures/*.json"
+      reason: >-
+        Same fixtures as above: OTEL identifiers and synthetic payload content,
+        sanitized before commit (placeholder account IDs, redacted credentials).
+    - rule_id: GHSA-mh99-v99m-4gvg
+      path: "**/node_modules/aws-cdk-lib/**"
+      expiration: "2026-10-31"
+      reason: >-
+        brace-expansion 5.0.7 bundled INSIDE the aws-cdk-lib package tarball;
+        bundled dependencies cannot be patched via npm overrides. Every other
+        copy in the tree is forced to the patched 5.0.8 via overrides in
+        claimsdemo/agentcore/cdk/package.json. Dev/synth-time only (CDK is a
+        build tool here, not deployed code). Remove when aws-cdk-lib ships a
+        rebundled release.
+fail_on_findings: true

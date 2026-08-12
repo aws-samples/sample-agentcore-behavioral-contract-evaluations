@@ -1,0 +1,84 @@
+# Behavioral contract for the claims processing demo agent.
+#
+# Schema matches agentic-behavioral-contracts YAML contracts. Swap this file
+# to validate a different agent -- no code changes required.
+#
+# This contract validates MULTIPLE legitimate execution paths:
+#   Path A (coverage active):  check_coverage -> lookup_formulary -> render_decision
+#   Path B (coverage expired): check_coverage -> render_decision (deny), no
+#                              formulary work needed
+# The unconditional core holds on every path; formulary constraints are gated
+# on the check_coverage result via `when:`. Conditions key on facts the agent
+# does not control (committed tool results), never on whether the agent felt
+# like doing a step -- otherwise a lazy agent selects its own requirements.
+
+name: claims-processing-v1
+version: "2.0.0"
+
+# Which agents this contract applies to. Glob patterns matched against the
+# service name AgentCore stamps on every span (e.g.
+# "claimsdemo_claims_agent.DEFAULT"). One evaluator Lambda can host many
+# contracts, each routed to its agent(s) by these patterns.
+applies_to:
+  - "*claims_agent*"
+
+# Maps tool names (as they appear in gen_ai.tool.name spans) to the data
+# source identity they represent. This is how "tool X was called" becomes
+# "data source Y was consulted".
+source_map:
+  lookup_formulary:
+    source_name: formulary-db
+    source_type: database
+  check_coverage:
+    source_name: coverage-policy-api
+    source_type: api
+
+constraints:
+  # ---- Unconditional core: holds on EVERY valid path ----
+
+  - type: must_not_use_only_parametric_knowledge
+
+  - type: must_retrieve_from
+    sources: ["coverage-policy-api"]
+
+  - type: must_include_steps
+    steps: ["check_coverage", "render_decision"]
+
+  - type: must_precede
+    before: check_coverage
+    after: render_decision
+
+  # ---- Path A: coverage is active -> full formulary process required ----
+
+  - type: must_retrieve_from
+    sources: ["formulary-db"]
+    when:
+      tool_result_matches:
+        tool: check_coverage
+        key: coverage_active
+        value: true
+
+  - type: must_include_steps
+    steps: ["lookup_formulary"]
+    when:
+      tool_result_matches:
+        tool: check_coverage
+        key: coverage_active
+        value: true
+
+  - type: must_precede
+    before: lookup_formulary
+    after: render_decision
+    when:
+      tool_result_matches:
+        tool: check_coverage
+        key: coverage_active
+        value: true
+
+  - type: must_contain_citations
+    min_count: 1
+    when:
+      tool_result_matches:
+        tool: check_coverage
+        key: coverage_active
+        value: true

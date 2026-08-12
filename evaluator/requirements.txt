@@ -1,0 +1,4 @@
+# Runtime dependency for the contract evaluator Lambda.
+# The contract engine (agent_validator) and OTEL normalization layer
+# (agentic_otel) are vendored in vendor/ -- see vendor/README.md.
+pyyaml>=6.0
