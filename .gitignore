@@ -21,3 +21,5 @@ node_modules/
 
 # Captured outputs (keep fixtures, ignore raw dumps)
 scripts/out/
+# ASH scan config (local only, not published)
+.ash/
